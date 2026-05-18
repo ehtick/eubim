@@ -6,3 +6,15 @@ Experiments in BIM Programming with AI.
 
 Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de programador a orquestador de IA. La crónica comienza en febrero de 2026, tras desarrollar un add-in complejo de MEP sin escribir una sola línea de código personalmente. El núcleo de la charla explora experimentos con frameworks de codificación autónoma y unit testing que utilizan agentes de IA para generar, testear y corregir código en tiempo real. Analizaremos cómo la instrumentación adaptativa permite a la IA observar el entorno transaccional de Revit, convirtiendo un ecosistema cerrado en una plataforma de desarrollo autodidacta y determinista.
 
+## Agenda Draft
+
+- interest in 2017 --> QA4R
+- show revitqc.com --> governance
+- bimrock procrastination --> cost $12
+- fortuitous timing
+- human interaction
+- agents --> cost of AI versus cost of human intervention
+- reliability? governance! --> cost
+- terrascape
+- little house: create with 2 storeys?
+- pruebalo! gather own experience
