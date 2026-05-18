@@ -1,0 +1,22 @@
+~/w/doc/job/eubim/2026-04-29_warp_aider.txt
+
+Prompt:
+
+on github, i saw a revit add-in unit testing framework by nice3point named RevitTest. however, searching for it now, i see lots of hits for ricaun/RevitTest. which if the two is better?
+
+Prompt:
+
+i am starting a new project. actually, i am not working on a revit add-in project at all. my goal is to set up an agentic ai framework to generate a revit add-in from a simple minimal prompt for demonstration purposes. i want to  includie unit testing functionality so the agentic framework can run and test the add-in independently without me having to launch revit manually, launch an external command manually, or verify results manually. all of that should be automated so the agentic system can complete and test the implementation autonomously. it is for a presentation on bim programming at the eubim conference in valencia on may 21.
+
+https://gemini.google.com/share/66cf0b6241ce
+
+Prompt:
+
+i am open regarding the specific LLM. i am also open regarding which agentic framework to use. i did use github copilot with claude opus 4.6 in february very successfully. however, i was forced to launch revit and the external command manually numerous times for three days running before the given programming task was successfully completed. for this demo, i would prefer to use a free-tier LLM and agentic framework. in february, github copilot gave me $12 worth of compute, which was enough to complete the task. i could use the free github copilot again, but might run out of credit. what agent and what llm would you recommand for the demo?
+
+Prompt:
+
+https://gemini.google.com/share/36cb5c6b5a8b
+
+https://gemini.google.com/share/8d6027da7568
+

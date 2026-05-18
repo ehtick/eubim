@@ -1,0 +1,275 @@
+~/x/special/eubim/2026-04-25_copilot.txt
+
+# Prompt
+
+how do i start a revit add-in unit test seession using @Nice3point/RevitUnit? do i need to launch revit manually, or is the revit launching integrated into the unit testing framework?
+
+# Copilot (GPT 5.2)
+
+For **Nice3point/RevitUnit** specifically: **Revit is launched for you** by the framework when you run the tests (e.g., `dotnet test` / `dotnet run` with a Revit-targeting configuration). You don’t normally start Revit manually.
+
+From the repo README:
+
+- Running tests is via `dotnet run` or `dotnet test` with a configuration like `Release.R26`.
+- You **must have a licensed Revit installed** that matches that configuration.
+- Tests execute on Revit’s single-threaded API context using `RevitThreadExecutor`.
+
+```bash
+cd C:/Your/Test/Directory
+dotnet test -c "Release.R26"
+# or
+dotnet run  -c "Release.R26"
+```
+
+Source: `Readme.md` in the repo (see “Running your tests” and “IMPORTANT” note).  
+https://github.com/Nice3point/RevitUnit/blob/b71eb7de9ce24012f2c3f20cdb9f0dd593b35be3/Readme.md#L54-L78
+
+---
+
+## About your “AI-based agentic framework using prompts only” goal
+
+You can do this, but you’ll still need **some execution harness** (because Revit add-ins are compiled .NET assemblies that must be loaded into Revit). A practical “prompts-only development loop” usually means:
+
+1. **Prompts define intent and changes**
+2. An agent generates/edits code + tests
+3. **Automated tests run in RevitUnit** (which launches Revit)
+4. The agent reads logs/test results and iterates
+
+To tailor a concrete architecture, tell me these 4 things:
+
+1) Target Revit version(s): 2024/2025/2026?  
+2) Add-in type: ExternalCommand only, or also Updaters, DockablePane, Events, etc.?  
+3) Preferred test framework: you’re OK with **TUnit** (what RevitUnit uses), or you need xUnit/NUnit compatibility?  
+4) Do you want the agent to operate **inside GitHub** (PR-based workflow), or locally (filesystem + dotnet CLI)?
+
+Once you answer, I’ll propose a minimal “agentic scaffold” (repo layout, prompt templates, test strategy with RevitUnit, and an execution loop that can run unattended).
+
+# Prompt
+
+revit 2026, external command only, tunit is fine (whichever framework is easiest), inside github is fine also. for context: i gave a workshop on BIM programming in madrid ten years ago. in velencia, at the eubim conference, the ten year anniversary of that event is being celebrated. i plan to attend and give another workshop, this time, the working title is something like `you can stop now`, since ai can automate revit add-in generation. i wish to demonstrate that live by asking the audience for an automation task, promt the ai agerntic framework to implement it, add a unit test tio endure the task is completed, and let the agent complete the implementation while i am free to discuss other topics with the audience.
+
+# Copilot (GPT 5.2)
+
+You can make this work as a **GitHub-driven “prompt → PR → RevitUnit tests (which auto-launch Revit 2026) → merge” loop**. The key is to constrain the agent so it reliably produces (1) a runnable ExternalCommand, (2) an automated RevitUnit/TUnit test that proves it, and (3) a deterministic “demo harness” so the audience sees it succeed.
+
+Below is a concrete architecture you can adopt.
+
+---
+
+## 1) What your live demo pipeline should look like (end-to-end)
+
+### A. Audience provides a task (natural language)
+Example: “Select all walls longer than 10m and tag them” / “Export rooms to CSV” / “Place a detail component at every door”.
+
+### B. You paste that task into a single “spec prompt” template
+The prompt forces the agent to output:
+- a short spec (inputs/outputs/constraints)
+- acceptance criteria
+- a RevitUnit test plan
+
+### C. Agent opens a PR in your GitHub repo
+PR contains:
+- ExternalCommand implementation
+- any supporting classes
+- **RevitUnit/TUnit tests** that run in Revit 2026
+
+### D. GitHub Actions runs tests
+A self-hosted Windows runner with Revit 2026 installed runs:
+
+- `dotnet test -c Release.R26`
+
+RevitUnit/TUnit will **launch Revit automatically** during the test run (you don’t start Revit manually).
+
+### E. You discuss with audience while CI runs
+When CI goes green, you can pull/merge and optionally run the command in Revit for a visual payoff.
+
+---
+
+## 2) Repo structure (recommended)
+
+Create a dedicated “demo” repo (keep it clean and repeatable):
+
+- `src/MyAddin/`
+  - ExternalCommand(s)
+  - minimal UI: ribbon optional, but for demo I’d keep it to a command you can invoke
+- `test/MyAddin.Tests/`
+  - RevitUnit/TUnit tests that verify behavior in a new temporary document
+- `build/` or `eng/`
+  - scripts: build, test, packaging
+- `.github/workflows/ci.yml`
+  - builds + runs RevitUnit tests on a self-hosted runner
+
+This mirrors how RevitUnit expects you to run tests via `dotnet test -c Release.R26` (see their README).
+
+Repo you referenced (official framework): https://github.com/Nice3point/RevitUnit
+
+---
+
+## 3) The “agentic” part: roles + constraints (what makes it reliable live)
+
+In practice you want **two agents** (even if it’s one LLM behind the scenes):
+
+1) **Spec Agent**
+   - converts audience request to a *tight* spec + acceptance criteria
+   - identifies edge cases
+   - decides what can be unit-tested (vs. needs manual visual verification)
+
+2) **Implementation Agent**
+   - generates code + tests
+   - iterates until CI passes
+
+### Hard constraints you should enforce in your prompt
+- “ExternalCommand only”
+- “No UI beyond TaskDialog unless asked”
+- “Must create/close its own Revit Document in tests”
+- “All tests must be deterministic; no reliance on current active document”
+- “Keep transactions minimal and explicit”
+- “Test must fail before implementation and pass after”
+
+This is what makes the demo feel “inevitable” instead of “hopeful”.
+
+---
+
+## 4) The RevitUnit testing model you’ll lean on
+
+RevitUnit is built around TUnit and a base class like `RevitApiTest`, plus an executor `RevitThreadExecutor` to ensure API calls happen on Revit’s thread.
+
+Your tests generally look like:
+
+- create a new project document in a `[Before(Test)]` hook
+- run a transaction to seed model elements
+- call your pure logic functions **or** directly invoke your command logic (recommended: split command into “command wrapper” + “core service”)
+- assert via collectors / element parameters
+- close document in `[After(Test)]`
+
+This pattern is already in their README and examples, and it’s the right approach for repeatability.
+
+---
+
+## 5) GitHub Actions reality check (important for your live workshop)
+
+### Hosted GitHub runners will NOT have Revit
+So you must use:
+
+- **self-hosted Windows runner** (on your machine, or a dedicated laptop/VM)
+- with **Revit 2026 installed and licensed**
+- with any required Revit add-in prerequisites
+
+This is totally workable for a live demo, but you need to set it up beforehand.
+
+Typical workflow:
+- repo has a workflow that targets `runs-on: self-hosted, windows`
+- workflow runs `dotnet test -c Release.R26`
+
+---
+
+## 6) A prompt template you can use live (copy/paste)
+
+Use something like this when the audience gives you a task:
+
+> **TASK**: (audience text)  
+> **TARGET**: Revit 2026, ExternalCommand only, .NET, C#  
+> **REPO RULES**:  
+> - Add/modify code only under `src/` and `test/`  
+> - Must include a RevitUnit/TUnit test proving the task is completed  
+> - Tests must create their own document and not rely on UI selection  
+> - Keep the command thin: put business logic in a service class callable from tests  
+> - CI command is: `dotnet test -c Release.R26`  
+> **DELIVERABLES**:  
+> 1) Implementation  
+> 2) Test(s) that fail before and pass after  
+> 3) Short README update: how to run the command + tests
+
+This “forces” the agent into a predictable shape.
+
+---
+
+## 7) Next step: I can produce a concrete starter repo scaffold
+
+If you want, I can outline (or generate as a PR, if you provide the repo name) a **minimal working skeleton** that already has:
+
+- a sample ExternalCommand
+- one passing RevitUnit test that launches Revit 2026
+- a GitHub Actions workflow for a self-hosted runner
+
+Questions (just to avoid wrong assumptions):
+
+1) Do you already have a GitHub repo for the workshop demo? If yes, what is `owner/repo`?
+2) Do you want the add-in built as **net8.0-windows** (common for Revit 2026 add-ins) or are you targeting another TFM?
+3) Will your self-hosted runner be the same machine you present on, or a separate machine?
+
+# Prompt
+
+1: no repo created yet
+
+2: yes, standard revit 2026, .net 8
+
+3: same machine; i have an HP laptop with windows and linux mint installed; i use linux mostly, with the single exception of revit add-in development, which requires windows; so, i will switch to windows for the demo preparation and the presentation; currently, i am in linux.
+
+# Copilot (GPT 5.2)
+
+You should create a **new GitHub repo** for the workshop and prep it on Windows with a **self-hosted Actions runner** (because Revit 2026 can’t run on GitHub-hosted runners). RevitUnit/TUnit will then **launch Revit automatically during `dotnet test`**, so your live “agent builds while I talk” flow becomes realistic.
+
+## Plan (minimal + demo-safe)
+
+### 1) Create a new repo (from Linux now)
+Create e.g. `jeremytammik/revit-ai-agent-demo` (public or private).
+
+Add only these essentials:
+
+- `src/MyAddin/` (net8.0-windows Revit add-in)
+- `test/MyAddin.Tests/` (RevitUnit/TUnit tests)
+- `.github/workflows/ci.yml` (runs on self-hosted Windows runner)
+
+You can create the empty repo via GitHub UI now; no Windows needed yet.
+
+### 2) On Windows: install prerequisites
+
+- Revit 2026 (licensed, matching what you’ll demo)
+- .NET 8 SDK
+- Git
+- (Optional) Visual Studio 2022
+
+### 3) On Windows: set up a **self-hosted GitHub Actions runner**
+
+This is the key step. You’ll register the runner on **your laptop**, and label it something like:
+
+- `self-hosted`, `windows`, `revit-2026`
+
+Then your workflow uses `runs-on: [self-hosted, windows, revit-2026]`.
+
+### 4) Use RevitUnit as the integration-test harness
+
+In your test project you reference `Nice3point.TUnit.Revit` with the `RevitVersion` property set to 2026 and run:
+
+```powershell
+dotnet test -c Release.R26
+```
+
+That test run will start Revit in the background and execute the TUnit tests on the Revit API thread.
+
+### 5) The live demo loop
+
+1. Audience gives task.
+2. You paste the task into your “spec prompt”.
+3. Agent opens PR implementing:
+   - ExternalCommand (thin wrapper)
+   - Service class with the logic
+   - RevitUnit/TUnit test that seeds a new model, runs the service/command, asserts results
+4. Actions runs on your laptop, launches Revit, tests pass/fail.
+5. Merge when green.
+
+---
+
+## What I need from you to proceed
+Since you don’t have a repo yet, I can’t create files/PRs. Pick one:
+
+1) **You create the repo** (recommended) and tell me the exact `owner/repo` (e.g. `jeremytammik/revit-ai-agent-demo`). Then I can:
+   - generate the full initial scaffold (solution + projects + workflow) as a PR using the coding agent tool.
+
+2) If you prefer, tell me what repo name you want and whether it should be public/private, and I’ll give you the exact minimal file set to paste in (but I can’t create the repo for you with the current tools).
+
+Also: do you want the add-in name to be something neutral like **WorkshopAddin** / **StopNowAddin**?
+
+Once you provide `owner/repo`, I’ll create a PR-ready scaffold that already has **one trivial test** (e.g., create a document and assert Revit `Application.VersionNumber == "2026"` or create a wall and count it) so you can validate the runner + RevitUnit pipeline before the workshop.
+

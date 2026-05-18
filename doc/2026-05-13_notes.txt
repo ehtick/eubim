@@ -1,0 +1,55 @@
+
+RevitUnit versus RevitTest ricaun
+
+Title and agenda: 2026-05-03_title_and_agenda.txt
+
+Codex with Revit Testing https://chatgpt.com/share/69f3389b-e1a8-83eb-aeab-7dd9522489a1
+
+Codex with Revit Coding https://chatgpt.com/share/69f89e12-61fc-83eb-990b-b9d4bd50f6a6 
+
+Revit Testing Comparison https://gemini.google.com/share/4bfb155193c4
+
+Revit Testing RevitUnit https://gemini.google.com/share/f3fdd0c9fbcb
+
+Title and synopsis https://gemini.google.com/share/62fcf584125c
+
+2026-05-06 use codex + gtp-5.2 mini to create, install and debug-instrument a revit add-in from scratch: 
+  ~/w/src/eubim/Codex/2026-05-06_codex.md
+
+RevitTest vs. RevitUnit: ~/w/doc/people/luiz_cassettari/2026-04-17_linkedin.txt
+
+AI for BIM programming is (not completely, but a bit) irrelevant... there are much larger issues coming up really fast:
+
+2026-05-13
+
+hands-on workshop
+things are changing so fast, whatever i tell you to prepare will be outdated
+maybe not tomorrow, but next week for sure
+
+github copilot $12 free quota for feburary 2026
+
+story of my last programming task
+hands-on was planned, but that did not happen
+open C:\Users\j\w\doc\job\bimrock\test\zionexample2026.rvt
+launch HVAC System Tools > Export HVAC JSON
+delete all
+launch HVAC System Tools > Import HVAC JSON
+explain how this was implemented
+
+i have not used any quota since february...
+
+now i installed codex
+
+next to try: /goal
+
+check the codex /goal twitter feeds
+
+rename command to CmdHello
+refactor into Execute into Execute2(doc)
+add CmdHello.Test and call Execute2
+implement AppInitialized and OnIdling
+call CmdHello.Test in Idling handler
+launch revit and verify that the entire sequence executed
+set up GitHub repo and commit
+handle versioning and set up agentioc support files, history, experiments etc. markdown docs and logs
+

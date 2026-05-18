@@ -1,0 +1,36 @@
+~/w/doc/job/eubim/2026-04-30_codex.txt
+
+2026-04-30
+
+- codex tutorial
+  https://youtu.be/KXIdYEdOPys
+
+Prompt:
+
+i heard about chatgpt/codex for macos. i also see things like https://github.com/openai/codex CLI and openai codex for windows at https://apps.microsoft.com/detail/9plm9xgg6vks. my goal is to implement a revit add-in including a unit testing framework with an agentic AI system set up to autonomously generate revit API code and drive the unit testing framework autonomously in order to ensure it works. so, i cannot work on macos. i need revit.exe installed and running, and hence a windows os. can i use any of these codex platforms in conjuction with a revit unit texting framework like nice3point revittest for autonomous code generation and testing?
+
+https://chatgpt.com/share/69f3389b-e1a8-83eb-aeab-7dd9522489a1
+
+2026-05-14
+
+How Memory Works in Codex CLI -- https://x.com/mem0ai/status/2054580022049198513
+
+Mem0 -- https://github.com/mem0ai/mem0 -- Mem0 ("mem-zero") enhances AI assistants and agents with an intelligent memory layer, enabling personalized AI interactions. It remembers user preferences, adapts to individual needs, and continuously learns over time—ideal for customer support chatbots, AI assistants, and autonomous systems.
+
+/Goal guide for non-technical people -- https://x.com/itsolelehmann/status/2054649363234992401?s=20
+
+Codex for dummies -- https://x.com/aashatwt/status/2054142745145667884
+
+Codex strategy -- https://x.com/cjzafir/status/2053980302075478249
+> Codex 5.5 high (fast) all the time.
+> Codex 5.5 (extra high) only for planning.
+> naration_process=false (when not looking at screen)
+> Start new session after 7 context compactions
+> /handoff skill: Compacts current convo into doc for new session.
+
+Prefer medium of extra high -- https://x.com/cjzafir/status/2054190137941315651
+
+Codex CLI options -- https://developers.openai.com/codex/cli/reference
+
+Working with OpenAI's Codex CLI: Commands, Agents, and Advanced Workflows -- https://www.anothercodingblog.com/p/working-with-openais-codex-cli-commands
+

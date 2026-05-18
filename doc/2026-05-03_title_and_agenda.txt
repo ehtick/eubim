@@ -1,0 +1,52 @@
+~/w/doc/job/eubim/2026-05-03_title_and_agenda.txt
+
+Título: ¿El fin del programador de Revit? Crónica de experimentos en codificación autónoma 
+
+Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de programador a orquestador de IA. La crónica comienza en febrero de 2026, tras desarrollar un add-in complejo de MEP sin escribir una sola línea de código personalmente. El núcleo de la charla explora experimentos con frameworks de codificación autónoma y unit testing que utilizan RevitUnit y agentes de IA para generar, testear y corregir código en tiempo real. Analizaremos cómo la instrumentación adaptativa permite a la IA observar el entorno transaccional de Revit, convirtiendo un ecosistema cerrado en una plataforma de desarrollo autodidacta y determinista.
+
+BIM Programming with AI
+
+A layman's experiments and experience using AI for BIM programming in 2026
+
+February 2026: Claude Opus 4.6 implements in three days
+
+May 2026: RevitUnit for autonomous agentic Revit API programming
+
+Revit Unit Testing frameworks
+
+### ChatGpt:
+
+Title
+
+Autonomous Revit Add-Ins: AI-Driven Code Generation, Testing, and Self-Debugging
+
+Synopsis
+
+This talk presents a practical framework for building Revit add-ins that evolve through an autonomous feedback loop. Using RevitTemplates and RevitUnit as the execution backbone, we integrate an AI coding agent to generate Revit API code, run in-process tests, and iteratively fix failures. The key innovation is adaptive instrumentation: the system augments its own logging to expose hidden state, making Revit’s transaction-bound, UI-constrained environment observable and debuggable. We’ll walk through a working setup, demonstrate failure-to-fix cycles, and discuss design patterns that turn Revit into a deterministic, self-improving development platform.
+
+Title
+
+Autonomous Revit Add-Ins: AI-Driven Code Generation and Self-Testing Workflows
+
+Synopsis
+
+This presentation explores how agentic AI can be integrated into a Revit add-in development pipeline to automatically generate, validate, and refine Revit API code. Focusing on a Windows-based setup with Revit running in-process, it demonstrates how a coding agent (e.g., Codex) can iteratively write add-in logic, trigger a test harness such as Nice3point RevitTest, and use structured test results to improve code quality without manual intervention. The talk highlights architectural patterns, orchestration challenges, and practical constraints of Revit’s UI-bound environment, offering a realistic blueprint for semi-autonomous development workflows in BIM software engineering.
+
+### Gemini:
+
+Title
+
+BIM-Bots: Orchestrating Autonomous Agents for Revit Development (Slide-Less Live Demo)
+
+Synopsis
+
+Step into the future of BIM development where the code writes itself. In this 90-minute "no-slides" session, we bypass traditional PowerPoint to showcase a live, autonomous workflow using AI agents and the Revit 2026 API. Watch in real-time as we deploy a "BIM Agent" to scaffold a professional-grade add-in using the Nice3point SDK, solve complex geometric challenges, and self-correct compilation errors—all through natural language. This session isn't just about AI-assisted coding; it’s about the shift from writing code to orchestrating agents, providing a raw, unscripted look at the friction, the triumphs, and the ultimate productivity of 2026 BIM automation.
+
+Title
+
+Revit Testing Evolved: Choosing Your Engine with Nice3point and ricaun
+
+Synopsis
+
+Unit testing in Revit has historically been a slow, cumbersome process, often leading developers to skip it entirely. This session dives into the modern landscape of Revit testing frameworks, specifically comparing the established NUnit-based approach by ricaun with the cutting-edge TUnit implementation by Nice3point. We will explore how these tools bridge the gap between external runners and the Revit API, automate Revit startup, and handle multi-version compatibility. Attendees will learn how to select the right framework for their team’s needs, resulting in more stable add-ins, faster deployment cycles, and a significantly cleaner codebase.
+
