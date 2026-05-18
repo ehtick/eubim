@@ -18,3 +18,6 @@ Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de p
 - terrascape
 - little house: create with 2 storeys?
 - pruebalo! gather own experience
+
+![Agenda draft](img/agenda.jpg)
+
