@@ -6,9 +6,9 @@ Experiments in BIM Programming with AI.
 
 Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de programador a orquestador de IA. La crónica comienza en febrero de 2026, tras desarrollar un add-in complejo de MEP sin escribir una sola línea de código personalmente. El núcleo de la charla explora experimentos con frameworks de codificación autónoma y unit testing que utilizan agentes de IA para generar, testear y corregir código en tiempo real. Analizaremos cómo la instrumentación adaptativa permite a la IA observar el entorno transaccional de Revit, convirtiendo un ecosistema cerrado en una plataforma de desarrollo autodidacta y determinista.
 
-## Agenda Draft
+## Rough Agenda Draft
 
-- interest in 2017 --> QA4R
+- interest in 2017 --> Q4R4
 - show revitqc.com --> governance
 - bimrock procrastination --> cost $12
 - fortuitous timing
@@ -19,5 +19,75 @@ Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de p
 - little house: create with 2 storeys?
 - pruebalo! gather own experience
 
-![Agenda draft](img/agenda.jpg)
+![Rough agenda draft](img/agenda.jpg)
+
+## Agenda
+
+1. Autodesk and The Building Coder
+2. Q4R4 and the Revit API discussion forum
+3. Retirement
+4. HVAC MEP system generation with Claude Opus 4.6
+5. Terrascape
+6. Today, tomorrow, agents et al
+
+## 1. Autodesk and The Building Coder
+
+2005 Autodesk
+2008 The Building Coder
+2010 Revit API discussion forum
+
+Employed as technology evangelist, conferences, Autodesk developer support, cf. details in bio.
+
+## 2. Q4R4 and the Revit API discussion forum
+
+Repetitive questions, thoughts on automation, Google translate getting better, but natural language comprehension still tricky.
+
+Intelligent flexible search engine, versus
+Machine learning, versus
+Deep learning
+
+Out of scope for me, still decdicated to providing support and answering questions, but some posts on Q4R4:
+
+- 1536: The Revit API Question Answering system Q4R4
+- 1539: Q4R4 question sources, `tbc` import and result presentation: Q4R4 GitHub repo and <code>tbcimport.py</code> script
+- 1688: Notes to Self on AskNow for Q4R4
+- 2047: Q4R4 Chunking with Claude, using LLM and RAG
+- 2060: ChatGPT for Q4R4
+
+add links and dates
+
+## 3. Retirement
+
+Retired in June 2025. 
+
+Last event: 
+
+DevCon Amsterdam 2025, thank you and bye bye!
+
+Photo
+
+## 4. MEP HVAC system generation, Claude Opus 4.6
+
+February 2026, after month-long procrastination, with very fortuitous timing:
+
+MEP HVAC system generation using Claude Opus 4.6
+
+Demo:
+
+- MEP HVAC system export to JSON
+- MEP HVAC system import from JSON
+
+## 5. Terrascape
+
+## 6. Today, tomorrow, agents et al
+
+GitHub Copilot
+Codex
+Cline
+Cursor
+
+Hermes
+OpenClaw
+
+Harness
 
