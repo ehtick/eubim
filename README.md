@@ -69,9 +69,34 @@ Last event: DevCon Amsterdam 2025, thank you and bye bye!
 
 ## 4. MEP HVAC system generation, Claude Opus 4.6
 
-February 2026, after month-long procrastination, with very fortuitous timing:
+I was tasked with implementing an add-in for MEP HVAC system generation from external data, e.g., a JSON file.
 
-MEP HVAC system generation using Claude Opus 4.6
+I addressed this after month-long procrastination, starting in the beginning of February 2026.
+This was very fortuitous timing, because Claude Opus 4.6 had been release just days before.
+I used it via GitHub Copilot.
+AI usage details:
+
+```
+  58 + 161 + 74 = 293 requests
+```
+
+- [Usage](img/2026-02-07_gh_copilot_usage.png)
+- [Breakdown](img/2026-02-07_gh_usage_breakdown.png)
+- [Metered](img/2026-02-07_gh_usage_metered.png)
+
+After a couple of days, I had exhausted my free February credit &ndash; just when I had completed the task.
+
+Based on that experience, two consequences:
+
+- Maybe I never need to touch code again
+- I need to be more careful how many hours I spend coding (back pain)
+
+I was quite surprised to discover:
+
+- That I had access to such a powerful model
+- Where the access was coming from
+- How the access was monitored
+- That the access was limited
 
 Demo:
 
@@ -80,8 +105,12 @@ Demo:
 
 ## 5. Terrascape
 
-- [Terrascape](https://terrascape.ai) technical advisor on Revit API
-- [Sentinel QC](https://www.revitqc.com/) automates QA/QC controls and implements governed write access to Revit with preview, atomic rollback, and audit receipts on every change. No AI touches the model. Deterministic tools do the work.
+I am a technical advisor on Revit API for [Terrascape](https://terrascape.ai).
+
+We have implemented the [Sentinel QC](https://www.revitqc.com/) application. 
+It automates QA/QC controls and implements governed write access to Revit with preview, atomic rollback, and audit receipts on every change. 
+No AI touches the model. 
+Deterministic tools do the work.
 
 ## 6. Today EUBIM demo
 
