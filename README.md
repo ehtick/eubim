@@ -83,8 +83,6 @@ Demo:
 - [Terrascape](https://terrascape.ai) technical advisor on Revit API
 - [Sentinel QC](https://www.revitqc.com/) automates QA/QC controls and implements governed write access to Revit with preview, atomic rollback, and audit receipts on every change. No AI touches the model. Deterministic tools do the work.
 
-
-
 ## 6. Today EUBIM demo
 
 I asked GitHub Copilot to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
@@ -94,21 +92,26 @@ I asked GitHub Copilot to read this repo to generate a chronological outline and
 - [Slide deck](/doc/2026-05-19_eubim_workshop_slides.html)
   &ndash; [render](https://htmlpreview.github.io/?https://github.com/jeremytammik/eubim/blob/main/doc/2026-05-19_eubim_workshop_slides.html)
 
+## 7. Tomorrow is up to you and your agents
 
+What I have tested and used:
 
-## 7. Tomorrow up to you and your agents
+- GitHub Copilot
+- Codex
 
-, tomorrow, agents et al
+Colleagues recommended looking at:
 
-GitHub Copilot
-Codex
-Cline
-Cursor
+- Cline
+- Cursor
 
-Hermes
-OpenClaw
+Larger more powerful autonomous agent frameworks:
 
-Harness
+- Hermes
+- OpenClaw
+
+Current research emphasises:
+
+- Harness
 
 
 ## License
