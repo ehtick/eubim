@@ -2,7 +2,7 @@
 
 Experiments in BIM Programming with AI.
 
-Presented at the [EUBIM 2026](https://www.eubim.com/) conference in Valencia, Spain, by Eubim, Encuentro de Usuarios BIM España, at Universitat Politècnica de València.
+Presented at the [EUBIM 2026](https://www.eubim.com/) conference in Valencia, Spain, at Universitat Politècnica de València. Eubim is Encuentro de Usuarios BIM España.
 
 ## ¿El fin del programador de Revit? <br/>Crónica de experimentos en codificación autónoma 
 
