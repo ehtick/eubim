@@ -2,6 +2,8 @@
 
 Experiments in BIM Programming with AI.
 
+Presented at the [EUBIM 2026](https://www.eubim.com/) conference in Valencia, Spain, by Eubim, Encuentro de Usuarios BIM España, at Universitat Politècnica de València.
+
 ## ¿El fin del programador de Revit? <br/>Crónica de experimentos en codificación autónoma 
 
 Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de programador a orquestador de IA. La crónica comienza en febrero de 2026, tras desarrollar un add-in complejo de MEP sin escribir una sola línea de código personalmente. El núcleo de la charla explora experimentos con frameworks de codificación autónoma y unit testing que utilizan agentes de IA para generar, testear y corregir código en tiempo real. Analizaremos cómo la instrumentación adaptativa permite a la IA observar el entorno transaccional de Revit, convirtiendo un ecosistema cerrado en una plataforma de desarrollo autodidacta y determinista.
@@ -33,9 +35,9 @@ Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de p
 
 ## 1. Autodesk and The Building Coder
 
-2005 Autodesk
-2008 The Building Coder
-2010 Revit API discussion forum
+- 2005 Autodesk
+- 2008 The Building Coder
+- 2010 Revit API discussion forum
 
 Employed as technology evangelist, conferences, Autodesk developer support, cf. details in bio.
 
@@ -43,19 +45,11 @@ Employed as technology evangelist, conferences, Autodesk developer support, cf. 
 
 Repetitive questions, thoughts on automation, Google translate getting better, but natural language comprehension still tricky.
 
-Intelligent flexible search engine, versus
-Machine learning, versus
-Deep learning
+- [Intelligent flexible search engine](https://chatgpt.com/share/6a0c47c8-7524-838a-a9ae-cf8ed8bde376), versus
+- Machine learning, versus
+- Deep learning
 
-Out of scope for me, still decdicated to providing support and answering questions, but some posts on Q4R4:
-
-<!-- 
-- <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1536_q4r4.md">1536</a> The Revit API Question Answering system Q4R4
-- <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1539_q4r4_lookup.md">1539</a> Q4R4 question sources, GitHub repo, <code>tbcimport.py</code> script, result presentation
-- <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1688_that_bim_girl.md#3">1688</a> Notes to Self on AskNow for Q4R4
-- <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/2047_aps_accel_vacat.md#3">2047</a> Q4R4 Chunking with Claude, using LLM and RAG
-- <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/2060_modeless_tutor.md#4">2060</a> ChatGPT for Q4R4
--->
+The implementation was out of scope for me in my daytime job, still dedicated to providing support and answering the questions that came up; I still thought about it quite a lot and published some articles on the subject of Q4R4, <i>Question Answering for Revit API</i>:
 
 - <a href="https://jeremytammik.github.io/tbc/a/1536_q4r4.html">1536 &ndash;  The Revit API Question Answering system Q4R4</a>
 - <a href="https://jeremytammik.github.io/tbc/a/1539_q4r4_lookup.html">1539 &ndash;  Q4R4 question sources, GitHub repo, <code>tbcimport.py</code> script, result presentation</a>
