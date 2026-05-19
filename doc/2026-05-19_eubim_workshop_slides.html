@@ -148,13 +148,13 @@
         
         .controls {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             left: 0;
             right: 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            align-items: flex-end;
+            padding: 0 24px;
             background: none;
             border: none;
             z-index: 1000;
@@ -169,6 +169,21 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            position: fixed;
+            bottom: 20px;
+        }
+
+        .controls-left {
+            left: 24px;
+        }
+
+        .controls-center {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .controls-right {
+            right: 24px;
         }
         
         .controls-center {
@@ -177,8 +192,8 @@
         }
         
         button {
-            padding: 8px 12px;
-            font-size: 1em;
+            padding: 12px 18px;
+            font-size: 1.05em;
             background: #333;
             color: white;
             border: none;
