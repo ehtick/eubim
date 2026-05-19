@@ -141,6 +141,11 @@ I asked GitHub Copilot using Haiku 4.5 (old, cheap) to read this repo to generat
 - [Slide deck](/doc/2026-05-19_eubim_workshop_slides.html)
   &ndash; [render](https://htmlpreview.github.io/?https://github.com/jeremytammik/eubim/blob/main/doc/2026-05-19_eubim_workshop_slides.html)
 
+I also asked for a Spanish script to ensure that I have the vocabulary at hand:
+
+- [Prompt and response](doc/2026-05-19_script_prompt.md)
+- [Spanish script](doc/2026-05-20_presentacion_script_es.md)
+
 ## 8. Tomorrow
 
 ... is up to you and your agents...
