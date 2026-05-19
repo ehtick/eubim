@@ -2,7 +2,7 @@
 
 Experiments in BIM Programming with AI.
 
-Presented at [EUBIM.code()](https://www.eubim.com/eubim-code/), Spanish BIM programmers, 
+Presented at [EUBIM.code()](https://www.eubim.com/eubim-code/), Spanish BIM programmers reunion, 
 associated with the [EUBIM 2026](https://www.eubim.com/) conference in Valencia, Spain, 
 at Universitat Politècnica de València, organised by Eubim, Encuentro de Usuarios BIM España.
 
@@ -171,6 +171,9 @@ Up to you:
 - What are your plans?
 
 <p style="font-size: larger">¡Pruebalo!</p>
+
+P.S. I recommend reading [AINews by smol.ai](https://news.smol.ai/).
+I do so daily.
 
 ## Author
 
