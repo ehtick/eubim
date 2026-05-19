@@ -2,7 +2,7 @@
 
 # Prompt
 
-how do i start a revit add-in unit test seession using @Nice3point/RevitUnit? do i need to launch revit manually, or is the revit launching integrated into the unit testing framework?
+how do i start a revit add-in unit test session using @Nice3point/RevitUnit? do i need to launch revit manually, or is the revit launching integrated into the unit testing framework?
 
 # Copilot (GPT 5.2)
 

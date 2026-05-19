@@ -76,7 +76,7 @@ I addressed this after month-long procrastination, starting in the beginning of 
 This was very fortuitous timing, because Claude Opus 4.6 was released just days before.
 I used it via GitHub Copilot.
 I spent 3-4 days in a manually driven loop.
-Claude die the coding, but I had to manually compile, launch Revit, manage the BIM, simplify, define sub-tasks and verify improvements.
+Claude did all the coding, but I had to manually compile, launch Revit, manage the BIM, simplify, define sub-tasks and verify improvements.
 AI usage details:
 
 ```
@@ -108,13 +108,23 @@ Demo:
 
 ## 5. Terrascape
 
+This does not fit into the timeline, because it extends both further back and forward.
 I am a technical advisor on Revit API for [Terrascape](https://terrascape.ai).
 We have implemented the [Sentinel QC](https://www.revitqc.com/) application. 
 It automates QA/QC controls and implements governed write access to Revit with preview, atomic rollback, and audit receipts on every change. 
 No AI touches the model. 
 Deterministic tools do the work.
+Very exciting project, lots of fun, learning a lot, happy to be doing this.
 
 ## 6. Autonomous Agentic Loop for Revit API
+
+- 2026-04-25 how to set up revit unit testing and an autonomous agentic loop copilot
+- 2026-04-30 how to set up an autonomous agentic loop codex
+- 2026-05-03 experiments with codex
+- 2026-05-06 experiments with codex
+- 2026-05-15 experiments with codex
+- 2026-05-16 experiments with codex
+- 2026-05-19 documentation
 
 See the slide deck below...
 
