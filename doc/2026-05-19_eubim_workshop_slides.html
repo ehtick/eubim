@@ -21,6 +21,10 @@
             padding: 20px;
         }
         
+        body:fullscreen {
+            padding: 0;
+        }
+        
         .presentation {
             width: 100%;
             max-width: 1200px;
@@ -30,12 +34,22 @@
             overflow: hidden;
         }
         
+        .presentation:fullscreen {
+            max-width: 100%;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
         .slide {
             display: none;
             min-height: 700px;
             padding: 60px 80px;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             animation: fadeIn 0.5s;
+        }
+        
+        .presentation:fullscreen .slide {
+            min-height: 100vh;
         }
         
         .slide.active {
@@ -145,6 +159,19 @@
             padding: 20px 40px;
             background: #f5f7fa;
             border-top: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .controls-left, .controls-center, .controls-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .controls-center {
+            flex: 1;
+            justify-content: center;
         }
         
         button {
@@ -156,6 +183,18 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background 0.3s;
+            white-space: nowrap;
+        }
+        
+        #fullscreenBtn {
+            padding: 12px 18px;
+            font-size: 1.2em;
+            background: #764ba2;
+            min-width: auto;
+        }
+        
+        #fullscreenBtn:hover {
+            background: #667eea;
         }
         
         button:hover {
@@ -617,9 +656,16 @@
 
         <!-- Controls -->
         <div class="controls">
-            <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
-            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">16</span></span>
-            <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+            <div class="controls-left">
+                <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            </div>
+            <div class="controls-center">
+                <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">16</span></span>
+            </div>
+            <div class="controls-right">
+                <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+                <button id="fullscreenBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶</button>
+            </div>
         </div>
     </div>
 
@@ -651,10 +697,36 @@
             showSlide(currentSlide);
         }
 
+        function toggleFullscreen() {
+            const elem = document.documentElement;
+            const btn = document.getElementById('fullscreenBtn');
+            
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                btn.textContent = '⛶ Exit';
+            } else {
+                document.exitFullscreen();
+                btn.textContent = '⛶';
+            }
+        }
+
+        // Listen for fullscreen changes to update button text
+        document.addEventListener('fullscreenchange', () => {
+            const btn = document.getElementById('fullscreenBtn');
+            if (document.fullscreenElement) {
+                btn.textContent = '⛶ Exit';
+            } else {
+                btn.textContent = '⛶';
+            }
+        });
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') changeSlide(-1);
             if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'f' || e.key === 'F') toggleFullscreen();
         });
 
         // Initialize
