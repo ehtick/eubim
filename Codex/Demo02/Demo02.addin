@@ -1,0 +1,26 @@
+<RevitAddIns>
+    <AddIn Type="Application">
+        <Name>Demo02</Name>
+        <Assembly>Demo02.Auto.dll</Assembly>
+        <AddInId>c66a0fe2-ebad-4043-a69c-f913e7b3a4d2</AddInId>
+        <FullClassName>Demo02.Application</FullClassName>
+        <VendorId>io.github.jeremytammik</VendorId>
+        <VendorDescription>Demo02 Revit 2026 add-in</VendorDescription>
+    </AddIn>
+    <AddIn Type="Command">
+        <Name>CmdDemo02</Name>
+        <Assembly>Demo02.Auto.dll</Assembly>
+        <AddInId>d53b5a5d-61b4-4f95-b03e-0c4b8d2b3f1a</AddInId>
+        <FullClassName>Demo02.Commands.CmdDemo02</FullClassName>
+        <VendorId>io.github.jeremytammik</VendorId>
+        <VendorDescription>Demo02 Revit 2026 add-in</VendorDescription>
+    </AddIn>
+    <AddIn Type="Command">
+        <Name>CmdLittleHouse</Name>
+        <Assembly>Demo02.Auto.dll</Assembly>
+        <AddInId>2bd2a4eb-7a5d-4f76-9f4a-f2c7b8b1f0b7</AddInId>
+        <FullClassName>Demo02.Commands.CmdLittleHouse</FullClassName>
+        <VendorId>io.github.jeremytammik</VendorId>
+        <VendorDescription>Demo02 Revit 2026 add-in</VendorDescription>
+    </AddIn>
+</RevitAddIns>

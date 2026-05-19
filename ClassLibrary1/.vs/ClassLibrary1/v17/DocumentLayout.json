@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|c:\\users\\j\\w\\src\\eubim\\classlibrary1\\classlibrary1\\helloworldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|solutionrelative:classlibrary1\\helloworldcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|c:\\users\\j\\w\\src\\eubim\\classlibrary1\\classlibrary1\\classlibrary1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|solutionrelative:classlibrary1\\classlibrary1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|c:\\users\\j\\w\\src\\eubim\\classlibrary1\\classlibrary1\\classlibrary1.csproj.user||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DF7055B7-93D3-43E9-A96B-2AE3B31C7269}|ClassLibrary1\\ClassLibrary1.csproj|solutionrelative:classlibrary1\\classlibrary1.csproj.user||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HelloWorldCommand.cs",
+              "DocumentMoniker": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\HelloWorldCommand.cs",
+              "RelativeDocumentMoniker": "ClassLibrary1\\HelloWorldCommand.cs",
+              "ToolTip": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\HelloWorldCommand.cs",
+              "RelativeToolTip": "ClassLibrary1\\HelloWorldCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T14:44:12.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClassLibrary1.csproj.user",
+              "DocumentMoniker": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\ClassLibrary1.csproj.user",
+              "RelativeDocumentMoniker": "ClassLibrary1\\ClassLibrary1.csproj.user",
+              "ToolTip": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\ClassLibrary1.csproj.user",
+              "RelativeToolTip": "ClassLibrary1\\ClassLibrary1.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2026-05-04T14:43:03.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClassLibrary1",
+              "DocumentMoniker": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\ClassLibrary1.csproj",
+              "RelativeDocumentMoniker": "ClassLibrary1\\ClassLibrary1.csproj",
+              "ToolTip": "C:\\Users\\j\\w\\src\\eubim\\ClassLibrary1\\ClassLibrary1\\ClassLibrary1.csproj",
+              "RelativeToolTip": "ClassLibrary1\\ClassLibrary1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-04T14:42:58.788Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

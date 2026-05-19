@@ -1,0 +1,6 @@
+Timestamp: 2026-05-16T19:49:34.8308532+02:00
+Phase: LittleHouse.Execute2
+Details: Autodesk.Revit.Exceptions.InvalidOperationException: The parameter is read-only.
+   at Autodesk.Revit.DB.Parameter.Set(Double value)
+   at Demo02.Commands.CmdLittleHouse.CreateWalls(Document document, LittleHouseReport report, Level baseLevel, Level upperLevel, CurveLoop boundary)
+   at Demo02.Commands.CmdLittleHouse.Execute2(Document document)

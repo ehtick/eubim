@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <RevitVersion>2026</RevitVersion>
+    <RevitAddinsPath>$(APPDATA)\Autodesk\Revit\Addins\$(RevitVersion)</RevitAddinsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="ClassLibrary1.csproj.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="InstallRevitAddin" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+    <MakeDir Directories="$(RevitAddinsPath)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(RevitAddinsPath)\$(TargetFileName)" />
+    <WriteLinesToFile File="$(RevitAddinsPath)\$(AssemblyName).addin" Overwrite="true" Lines="&lt;RevitAddIns&gt;&#xD;&#xA;  &lt;AddIn Type=&quot;Command&quot;&gt;&#xD;&#xA;    &lt;Name&gt;$(AssemblyName)&lt;/Name&gt;&#xD;&#xA;    &lt;Assembly&gt;$(RevitAddinsPath)\$(TargetFileName)&lt;/Assembly&gt;&#xD;&#xA;    &lt;AddInId&gt;8E7C6D4C-1E1A-4A1F-9D40-6C8D6B2B3E10&lt;/AddInId&gt;&#xD;&#xA;    &lt;FullClassName&gt;ClassLibrary1.HelloWorldCommand&lt;/FullClassName&gt;&#xD;&#xA;    &lt;Text&gt;Hello World&lt;/Text&gt;&#xD;&#xA;    &lt;VendorId&gt;CPYT&lt;/VendorId&gt;&#xD;&#xA;    &lt;VendorDescription&gt;Minimal hello world Revit add-in&lt;/VendorDescription&gt;&#xD;&#xA;  &lt;/AddIn&gt;&#xD;&#xA;&lt;/RevitAddIns&gt;" />
+  </Target>
+
+</Project>

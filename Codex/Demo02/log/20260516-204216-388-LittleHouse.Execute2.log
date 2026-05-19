@@ -1,0 +1,5 @@
+Timestamp: 2026-05-16T20:42:16.3890138+02:00
+Phase: LittleHouse.Execute2
+Details: System.InvalidOperationException: Door or window family symbol could not be loaded.
+   at Demo02.Commands.CmdLittleHouse.PlaceDoorAndWindows(Document document, LittleHouseReport report, Level level, IReadOnlyList`1 walls)
+   at Demo02.Commands.CmdLittleHouse.Execute2(Document document)

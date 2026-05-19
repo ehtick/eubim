@@ -1,0 +1,15 @@
+<RevitAddIns>
+    <AddIn Type="Command">
+        <Name>Jet01</Name>
+        <Assembly>Jet01\Jet01.dll</Assembly>
+        <AddInId>61CA069E-8E6C-418F-9687-2C455669CC17</AddInId>
+        <FullClassName>Jet01.Commands.StartupCommand</FullClassName>
+        <Text>Jet01</Text>
+        <VendorId>Development</VendorId>
+        <VendorDescription></VendorDescription>
+    </AddIn>
+    <ManifestSettings>
+        <UseRevitContext>False</UseRevitContext>
+        <ContextName>Jet01</ContextName>
+    </ManifestSettings>
+</RevitAddIns>

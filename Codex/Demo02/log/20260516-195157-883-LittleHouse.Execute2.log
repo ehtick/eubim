@@ -1,0 +1,7 @@
+Timestamp: 2026-05-16T19:51:57.8838997+02:00
+Phase: LittleHouse.Execute2
+Details: Autodesk.Revit.Exceptions.InvalidOperationException: Property 'SlopeAngle' is disabled.
+   at Autodesk.Revit.DB.FootPrintRoof.set_SlopeAngle(ModelCurve pCurve, Double slopeAngle)
+   at Demo02.Commands.CmdLittleHouse.SetRoofSlopeFromLongEdges(FootPrintRoof roof, ModelCurveArray footprint)
+   at Demo02.Commands.CmdLittleHouse.CreateRoof(Document document, LittleHouseReport report, Level level, IReadOnlyList`1 walls, CurveLoop boundary)
+   at Demo02.Commands.CmdLittleHouse.Execute2(Document document)

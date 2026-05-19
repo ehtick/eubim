@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <RevitVersion>2026</RevitVersion>
+    <RevitAddinsPath>$(APPDATA)\Autodesk\Revit\Addins\$(RevitVersion)</RevitAddinsPath>
+    <InstallRevitAddin>false</InstallRevitAddin>
+    <SignRevitAddin>true</SignRevitAddin>
+    <SignToolPath>C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe</SignToolPath>
+    <SignCertificatePath>$(MSBuildProjectDirectory)\signing\Demo02.DevCodeSigning.pfx</SignCertificatePath>
+    <SignCertificatePassword>Demo02-Dev-123!</SignCertificatePassword>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="InstallRevitAddin" AfterTargets="Build" Condition="'$(InstallRevitAddin)' == 'true' and '$(Configuration)' == 'Debug.R26'">
+    <MakeDir Directories="$(RevitAddinsPath)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(RevitAddinsPath)\Demo02.Auto.dll" />
+    <WriteLinesToFile File="$(RevitAddinsPath)\$(AssemblyName).addin" Overwrite="true" Lines="&lt;RevitAddIns&gt;&#xD;&#xA;  &lt;AddIn Type=&quot;Application&quot;&gt;&#xD;&#xA;    &lt;Name&gt;$(AssemblyName)&lt;/Name&gt;&#xD;&#xA;    &lt;Assembly&gt;Demo02.Auto.dll&lt;/Assembly&gt;&#xD;&#xA;    &lt;AddInId&gt;c66a0fe2-ebad-4043-a69c-f913e7b3a4d2&lt;/AddInId&gt;&#xD;&#xA;    &lt;FullClassName&gt;Demo02.Application&lt;/FullClassName&gt;&#xD;&#xA;    &lt;VendorId&gt;io.github.jeremytammik&lt;/VendorId&gt;&#xD;&#xA;    &lt;VendorDescription&gt;Demo02 Revit 2026 add-in&lt;/VendorDescription&gt;&#xD;&#xA;  &lt;/AddIn&gt;&#xD;&#xA;  &lt;AddIn Type=&quot;Command&quot;&gt;&#xD;&#xA;    &lt;Name&gt;CmdDemo02&lt;/Name&gt;&#xD;&#xA;    &lt;Assembly&gt;Demo02.Auto.dll&lt;/Assembly&gt;&#xD;&#xA;    &lt;AddInId&gt;d53b5a5d-61b4-4f95-b03e-0c4b8d2b3f1a&lt;/AddInId&gt;&#xD;&#xA;    &lt;FullClassName&gt;Demo02.Commands.CmdDemo02&lt;/FullClassName&gt;&#xD;&#xA;    &lt;VendorId&gt;io.github.jeremytammik&lt;/VendorId&gt;&#xD;&#xA;    &lt;VendorDescription&gt;Demo02 Revit 2026 add-in&lt;/VendorDescription&gt;&#xD;&#xA;  &lt;/AddIn&gt;&#xD;&#xA;  &lt;AddIn Type=&quot;Command&quot;&gt;&#xD;&#xA;    &lt;Name&gt;CmdLittleHouse&lt;/Name&gt;&#xD;&#xA;    &lt;Assembly&gt;Demo02.Auto.dll&lt;/Assembly&gt;&#xD;&#xA;    &lt;AddInId&gt;2bd2a4eb-7a5d-4f76-9f4a-f2c7b8b1f0b7&lt;/AddInId&gt;&#xD;&#xA;    &lt;FullClassName&gt;Demo02.Commands.CmdLittleHouse&lt;/FullClassName&gt;&#xD;&#xA;    &lt;VendorId&gt;io.github.jeremytammik&lt;/VendorId&gt;&#xD;&#xA;    &lt;VendorDescription&gt;Demo02 Revit 2026 add-in&lt;/VendorDescription&gt;&#xD;&#xA;  &lt;/AddIn&gt;&#xD;&#xA;&lt;/RevitAddIns&gt;" />
+  </Target>
+
+  <Target Name="SignRevitAddin" AfterTargets="Build" Condition="'$(SignRevitAddin)' == 'true' and '$(Configuration)' == 'Debug.R26'">
+    <Exec Command="&quot;$(SignToolPath)&quot; sign /f &quot;$(SignCertificatePath)&quot; /p $(SignCertificatePassword) /fd SHA256 &quot;$(TargetPath)&quot;" />
+  </Target>
+
+</Project>

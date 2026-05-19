@@ -1,0 +1,6 @@
+Timestamp: 2026-05-16T19:51:01.1356748+02:00
+Phase: LittleHouse.Execute2
+Details: Autodesk.Revit.Exceptions.ArgumentNullException: Value cannot be null.
+   at Autodesk.Revit.Creation.Document.NewFootPrintRoof(CurveArray footPrint, Level level, RoofType roofType, ModelCurveArray& footPrintToModelCurvesMapping)
+   at Demo02.Commands.CmdLittleHouse.CreateRoof(Document document, LittleHouseReport report, Level level, IReadOnlyList`1 walls, CurveLoop boundary)
+   at Demo02.Commands.CmdLittleHouse.Execute2(Document document)
