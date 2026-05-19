@@ -49,13 +49,19 @@ Deep learning
 
 Out of scope for me, still decdicated to providing support and answering questions, but some posts on Q4R4:
 
+<!-- 
 - <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1536_q4r4.md">1536</a> The Revit API Question Answering system Q4R4
 - <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1539_q4r4_lookup.md">1539</a> Q4R4 question sources, GitHub repo, <code>tbcimport.py</code> script, result presentation
 - <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/1688_that_bim_girl.md#3">1688</a> Notes to Self on AskNow for Q4R4
 - <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/2047_aps_accel_vacat.md#3">2047</a> Q4R4 Chunking with Claude, using LLM and RAG
 - <a href="https://github.com/jeremytammik/tbc/blob/gh-pages/a/2060_modeless_tutor.md#4">2060</a> ChatGPT for Q4R4
+-->
 
-add links and dates
+- <a href="https://jeremytammik.github.io/tbc/a/1536_q4r4.html">1536</a> The Revit API Question Answering system Q4R4
+- <a href="https://jeremytammik.github.io/tbc/a/1539_q4r4_lookup.html">1539</a> Q4R4 question sources, GitHub repo, <code>tbcimport.py</code> script, result presentation
+- <a href="https://jeremytammik.github.io/tbc/a/1688_that_bim_girl.html#3">1688</a> Notes to Self on AskNow for Q4R4
+- <a href="https://jeremytammik.github.io/tbc/a/2047_aps_accel_vacat.html#3">2047</a> Q4R4 Chunking with Claude, using LLM and RAG
+- <a href="https://jeremytammik.github.io/tbc/a/2060_modeless_tutor.html#4">2060</a> ChatGPT for Q4R4
 
 ## 3. Retirement
 
