@@ -148,6 +148,11 @@ Later, I also asked for a Spanish script to ensure that I have the vocabulary at
 
 I skimmed the script and do not agree with it in all points, but it is fun to look at  :-)
 
+Finally, to announce my participation on LinkedIn:
+
+- [Prompt and response](doc/2026-05-20_linkedin_prompt.md)
+- [LinkedIn article](doc/2026-05-20_linkedin_article.md)
+
 ## 8. Tomorrow
 
 ... is up to you and your agents...
