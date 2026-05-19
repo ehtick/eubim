@@ -138,8 +138,8 @@ I asked GitHub Copilot using Haiku 4.5 (old, cheap) to read this repo to generat
 
 - [My prompt and LLM session notes](/doc/2026-05-19_copilot.txt)
 - [Chronological outline](/doc/2026-05-19_autonomous_revit_addins_chronology.md)
-- [Slide deck](/doc/2026-05-19_eubim_workshop_slides.html)
-  &ndash; [render](https://htmlpreview.github.io/?https://github.com/jeremytammik/eubim/blob/main/doc/2026-05-19_eubim_workshop_slides.html)
+- [Slide deck](https://htmlpreview.github.io/?https://github.com/jeremytammik/eubim/blob/main/doc/2026-05-19_eubim_workshop_slides.html)
+  &ndash; [HTML source](/doc/2026-05-19_eubim_workshop_slides.html)
 
 Later, I also asked for a Spanish script to ensure that I have the vocabulary at hand:
 
