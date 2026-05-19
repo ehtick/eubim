@@ -13,69 +13,57 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
-        }
-        
-        body:fullscreen {
             padding: 0;
         }
         
         .presentation {
-            width: 100%;
-            max-width: 1200px;
+            width: 100vw;
+            height: 100vh;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .presentation:fullscreen {
-            max-width: 100%;
             border-radius: 0;
             box-shadow: none;
+            overflow: hidden;
+            position: relative;
         }
         
         .slide {
             display: none;
-            min-height: 700px;
+            width: 100%;
+            height: 100%;
             padding: 60px 80px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: white;
             animation: fadeIn 0.5s;
-        }
-        
-        .presentation:fullscreen .slide {
-            min-height: 100vh;
-        }
-        
-        .slide.active {
-            display: flex;
             flex-direction: column;
             justify-content: center;
         }
         
+        .slide.active {
+            display: flex;
+        }
+        
         .slide h1 {
             font-size: 3.5em;
-            color: #333;
+            color: #000;
             margin-bottom: 30px;
             font-weight: 700;
         }
         
         .slide h2 {
             font-size: 2.5em;
-            color: #667eea;
+            color: #000;
             margin-bottom: 40px;
-            border-bottom: 4px solid #764ba2;
+            border-bottom: 2px solid #333;
             padding-bottom: 20px;
         }
         
         .slide h3 {
             font-size: 1.8em;
-            color: #333;
+            color: #000;
             margin-top: 30px;
             margin-bottom: 15px;
         }
@@ -83,7 +71,7 @@
         .slide p, .slide li {
             font-size: 1.3em;
             line-height: 1.8;
-            color: #555;
+            color: #333;
             margin-bottom: 15px;
         }
         
@@ -98,7 +86,7 @@
         
         .subtitle {
             font-size: 1.8em;
-            color: #764ba2;
+            color: #555;
             font-weight: 300;
             margin-bottom: 60px;
         }
@@ -111,14 +99,14 @@
         }
         
         .timeline-item {
-            background: rgba(102, 126, 234, 0.1);
+            background: #f5f5f5;
             padding: 20px;
-            border-left: 5px solid #667eea;
-            border-radius: 4px;
+            border-left: 3px solid #666;
+            border-radius: 0;
         }
         
         .timeline-item strong {
-            color: #667eea;
+            color: #000;
             display: block;
             margin-bottom: 10px;
         }
@@ -126,47 +114,57 @@
         .timeline-item p {
             font-size: 1.1em;
             margin: 0;
+            color: #555;
         }
         
         .demo-box {
-            background: rgba(0, 0, 0, 0.05);
-            border: 3px solid #667eea;
-            border-radius: 8px;
+            background: #f0f0f0;
+            border: 2px solid #999;
+            border-radius: 0;
             padding: 30px;
             margin: 20px 0;
             font-family: 'Courier New', monospace;
         }
         
         .demo-box code {
-            color: #333;
+            color: #000;
             font-size: 1.1em;
         }
         
         .key-point {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #f5f5f5;
+            color: #000;
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 0;
+            border-left: 5px solid #333;
             margin: 20px 0;
             font-size: 1.2em;
             font-weight: 600;
         }
         
         .controls {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background: #f5f7fa;
-            border-top: 1px solid #e0e0e0;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding: 0 20px;
+            background: none;
+            border: none;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .controls button {
+            pointer-events: all;
         }
         
         .controls-left, .controls-center, .controls-right {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .controls-center {
@@ -175,30 +173,19 @@
         }
         
         button {
-            padding: 12px 30px;
-            font-size: 1.1em;
-            background: #667eea;
+            padding: 8px 12px;
+            font-size: 1em;
+            background: #333;
             color: white;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
             transition: background 0.3s;
             white-space: nowrap;
-        }
-        
-        #fullscreenBtn {
-            padding: 12px 18px;
-            font-size: 1.2em;
-            background: #764ba2;
             min-width: auto;
         }
         
-        #fullscreenBtn:hover {
-            background: #667eea;
-        }
-        
         button:hover {
-            background: #764ba2;
+            background: #555;
         }
         
         button:disabled {
@@ -207,15 +194,18 @@
         }
         
         .slide-counter {
-            font-size: 1.2em;
+            font-size: 1em;
             color: #333;
             font-weight: 600;
+            background: white;
+            padding: 4px 12px;
+            border: 1px solid #999;
         }
         
         .highlight {
-            background: #fff176;
+            background: #e0e0e0;
             padding: 2px 8px;
-            border-radius: 3px;
+            border-radius: 0;
             font-weight: 600;
         }
         
@@ -231,9 +221,10 @@
         }
         
         .column {
-            background: rgba(255, 255, 255, 0.6);
+            background: #f5f5f5;
             padding: 20px;
-            border-radius: 4px;
+            border-radius: 0;
+            border: 1px solid #ddd;
         }
         
         @keyframes fadeIn {
@@ -255,6 +246,9 @@
             color: #666;
             max-height: 200px;
             overflow-y: auto;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
         
         .show-notes .speaker-notes {
@@ -268,7 +262,7 @@
         <div class="slide active">
             <h1>¿El fin del programador de Revit?</h1>
             <p class="subtitle">Crónica de experimentos en codificación autónoma</p>
-            <h3 style="color: #667eea; font-weight: 400;">From Manual AI-Driven Development to Fully Autonomous Systems</h3>
+            <h3 style="color: #555; font-weight: 400;">From Manual AI-Driven Development to Fully Autonomous Systems</h3>
             <p style="margin-top: 80px; font-size: 1.2em; color: #888;">Jeremy Tammik | EUBIM 2026 Valencia</p>
             <p style="font-size: 1.2em; color: #888;">May 20, 2026 | 90 Minutes</p>
             <div class="speaker-notes">
@@ -313,7 +307,7 @@
                     <p>Retired after 20 years. Last event: DevCon Amsterdam 2025.</p>
                 </div>
             </div>
-            <p style="margin-top: 60px; color: #667eea; font-weight: 600;">Key insight: Decades of repetitive questions + AI + automation = opportunity.</p>
+            <p style="margin-top: 60px; color: #000; font-weight: 600;">Key insight: Decades of repetitive questions + AI + automation = opportunity.</p>
             <div class="speaker-notes">
                 <strong>Speaker Notes:</strong> Briefly reflect on the journey. Emphasize how repetitive programming tasks (answering the same questions for 15 years) made AI automation a natural next step. Transition: "In retirement, I had time to experiment. Fortuitously, AI had just reached the point where it could reliably generate Revit code."
             </div>
@@ -335,7 +329,7 @@
                 <li><strong>5.</strong> I tell Claude "that didn't work" or "tweak X"</li>
                 <li><strong>6.</strong> Claude regenerates; loop back to step 3</li>
             </ul>
-            <p style="margin-top: 40px; color: #667eea;"><strong>Result:</strong> Fully working HVAC system import/export in 3 days.</p>
+            <p style="margin-top: 40px; color: #000;"><strong>Result:</strong> Fully working HVAC system import/export in 3 days.</p>
             <p style="color: #888;"><em>But every iteration required me to click buttons and describe what I saw.</em></p>
             <div class="speaker-notes">
                 <strong>Speaker Notes:</strong> Emphasize the friction: I had to visually inspect the model each time. That's where the idea came from: "What if the AI could verify itself without me?"
@@ -346,7 +340,7 @@
         <div class="slide">
             <h2>The Question</h2>
             <div style="margin-top: 60px;">
-                <h3 style="text-align: center; font-size: 2.2em; color: #764ba2;">Can the AI close the loop?</h3>
+                <h3 style="text-align: center; font-size: 2.2em; color: #000;">Can the AI close the loop?</h3>
                 <p style="text-align: center; margin-top: 60px; font-size: 1.4em; color: #333;">
                     Prompt → Code Gen → Compile → Sign → Install → Launch Revit → Run → Log → Verify
                 </p>
@@ -408,7 +402,7 @@
                     └── Demo02.csproj (build + sign)
                 </code>
             </div>
-            <p style="margin-top: 40px; color: #667eea;"><strong>Pattern:</strong> Every external command follows the same architecture. Consistency = predictability = reliability.</p>
+            <p style="margin-top: 40px; color: #000;"><strong>Pattern:</strong> Every external command follows the same architecture. Consistency = predictability = reliability.</p>
             <div class="speaker-notes">
                 <strong>Speaker Notes:</strong> Show the folder structure on screen. Explain that AGENTS.md documents these patterns so future commands follow the same rules.
             </div>
@@ -464,7 +458,7 @@
                     }
                 </code>
             </div>
-            <p style="margin-top: 40px; color: #667eea;"><strong>Key:</strong> Stay subscribed to Idling until document exists. Only then execute.</p>
+            <p style="margin-top: 40px; color: #000;"><strong>Key:</strong> Stay subscribed to Idling until document exists. Only then execute.</p>
             <div class="speaker-notes">
                 <strong>Speaker Notes:</strong> Show the sequence: OnStartup → ApplicationInitialized → Idling. Explain the timing: Revit may not have a document yet when Idling first fires. We wait for one.
             </div>
@@ -529,38 +523,38 @@
             <h2>The Complete Autonomous Loop</h2>
             <div style="margin: 60px 0;">
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">1. Codex generates code</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">1. Codex generates code</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">2. Build system compiles</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">2. Build system compiles</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">3. Build system signs DLL</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">3. Build system signs DLL</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">4. Build system installs to Revit</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">4. Build system installs to Revit</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">5. Revit launches (command-line RVT)</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">5. Revit launches (command-line RVT)</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">6. Add-in auto-executes via Idling</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">6. Add-in auto-executes via Idling</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">7. Logs written, process exits</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">7. Logs written, process exits</span>
                 </p>
                 <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
                 <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
-                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">8. Codex reads logs, iterates or completes</span>
+                    <span style="background: #ddd; color: #000; padding: 10px 20px; border-radius: 0;">8. Codex reads logs, iterates or completes</span>
                 </p>
             </div>
-            <p style="text-align: center; margin-top: 40px; color: #667eea; font-weight: 600;">⏱️ End-to-end execution: ~25–30 seconds</p>
+            <p style="text-align: center; margin-top: 40px; color: #000; font-weight: 600;">⏱️ End-to-end execution: ~25–30 seconds</p>
             <div class="speaker-notes">
                 <strong>Speaker Notes:</strong> Walk through this step by step. Emphasize that once set up, it runs 100% automatically. Show a video or live demo if available.
             </div>
@@ -589,19 +583,19 @@
         <div class="slide">
             <h2>Key Insights</h2>
             <div style="margin: 40px 0;">
-                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                <p style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-left: 3px solid #666;">
                     <span class="emoji">1️⃣</span> <strong>AI + Structure = Reliability.</strong> Free-form prompts fail. Patterns (AGENTS.md) ensure consistent code.
                 </p>
-                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                <p style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-left: 3px solid #666;">
                     <span class="emoji">2️⃣</span> <strong>Signing solves the Revit dialog problem.</strong> One-time setup, massive payoff.
                 </p>
-                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                <p style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-left: 3px solid #666;">
                     <span class="emoji">3️⃣</span> <strong>Events (ApplicationInitialized, Idling) are the key to autonomy.</strong> Not button clicks.
                 </p>
-                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                <p style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-left: 3px solid #666;">
                     <span class="emoji">4️⃣</span> <strong>Logging enables autonomous iteration.</strong> Logs are the "eyes" the AI uses to verify and refine.
                 </p>
-                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                <p style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-left: 3px solid #666;">
                     <span class="emoji">5️⃣</span> <strong>Documentation (AGENTS.md) is foundational.</strong> Future commands inherit patterns; developers and AI follow conventions.
                 </p>
             </div>
@@ -613,14 +607,14 @@
         <!-- Slide 15: Part 5 - Lessons & Future -->
         <div class="slide">
             <h2>Part 5: Lessons & Future (15 min)</h2>
-            <h3 style="color: #667eea;">What AI Excels At:</h3>
+            <h3 style="color: #000;">What AI Excels At:</h3>
             <ul>
                 <li>Boilerplate code (manifests, event handlers)</li>
                 <li>Iteration (refactor, fix, test, refactor)</li>
                 <li>Following patterns (if patterns are clear)</li>
                 <li>Testing and verification (writing log parsers, checking results)</li>
             </ul>
-            <h3 style="color: #667eea; margin-top: 40px;">Where Humans Are Still Essential:</h3>
+            <h3 style="color: #000; margin-top: 40px;">Where Humans Are Still Essential:</h3>
             <ul>
                 <li>Defining the problem clearly</li>
                 <li>Creating architectural patterns (AGENTS.md)</li>
@@ -642,11 +636,11 @@
             <p style="font-size: 1.3em; color: #888; margin-bottom: 40px;">
                 <em>(We proved it can. In a weekend.)</em>
             </p>
-            <p style="font-size: 1.5em; color: #667eea; font-weight: 600;">
+            <p style="font-size: 1.5em; color: #000; font-weight: 600;">
                 The real question is: <strong>"What should humans do when AI writes Revit add-ins?"</strong>
             </p>
             <div style="margin-top: 80px; text-align: center;">
-                <p style="font-size: 1.3em; color: #333;">❓ Questions? ❓</p>
+                <p style="font-size: 1.3em; color: #000;">❓ Questions? ❓</p>
                 <p style="color: #888; margin-top: 30px;">Demo available. Logs available. AGENTS.md pattern library available on GitHub.</p>
             </div>
             <div class="speaker-notes">
@@ -657,14 +651,14 @@
         <!-- Controls -->
         <div class="controls">
             <div class="controls-left">
-                <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                <button id="prevBtn" onclick="changeSlide(-1)">←</button>
+                <button id="fullscreenBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶</button>
             </div>
             <div class="controls-center">
                 <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">16</span></span>
             </div>
             <div class="controls-right">
-                <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
-                <button id="fullscreenBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶</button>
+                <button id="nextBtn" onclick="changeSlide(1)">→</button>
             </div>
         </div>
     </div>
