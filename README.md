@@ -19,9 +19,7 @@ Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de p
 - little house: create with 2 storeys?
 - pruebalo! gather own experience
 
-<img src="img/agenda.jpg" alt="Rough agenda draft" title="Rough agenda draft" width="60%"/>
-
-![Rough agenda draft](img/agenda.jpg)
+<img src="img/agenda.jpg" alt="Rough agenda draft" title="Rough agenda draft" width="80%"/>
 
 ## Agenda
 
@@ -72,6 +70,8 @@ Retired in June 2025.
 Last event: DevCon Amsterdam 2025, thank you and bye bye!
 
 ![Farewell at DevCon](img/2025-05-21_devcon_adskteam1.jpg)
+
+<br/>
 
 ## 4. MEP HVAC system generation, Claude Opus 4.6
 
