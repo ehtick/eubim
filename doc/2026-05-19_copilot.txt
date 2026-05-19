@@ -141,3 +141,20 @@ A fully functional, professional presentation with:
 
 You're ready for tomorrow! 🚀
 
+## Messy Ending
+
+It was pretty hard to tweak the slides after first generation, and it ended up failing completely, so I moved to external ChatGPT for some final cleanup. Here are some of the failing prompts to GitHub Copilot using Claude Haiku 4.5:00
+
+- please proceed
+- add a full very small screen toggle button to the slides, on each slide, e.g., using something like 
+```
+<button onclick="document.documentElement.requestFullscreen()">
+  Full Screen
+</button>
+```
+- thank you. very nice, in principle. some final touches, please: i do not like the blue background edge. i would prefer no edge at all, just the text and the buttons. also, preferably monochrome, not blue text. also, the buttons keep shifting up and down because they are at the bottom of the page. please make them smaller still and place them in the upper left and right corners.
+- i accepted the changes. did you apply them as requested?
+- now scrolling is disabled. however, some of the slides are too tall to fit onto the screen in their entirety. therefore, scrolling is required. specifically, slides 6 and 12 are only partially visible and cannot be scrolled up and down.
+- no, the problem is not solved. on slide 6, in full screen mode, the title `Part 3` is still obscured by the `Exit` (full screen) button, and i cannot scroll to show the title completely. on slide 12, both the title and the bottom line are completely invisible, regardless how much i try to scroll up or down.
+- stop. you already did all of that! i just want to fix the slide deck a little, so that the title and bottom line are not obscured, or can be scrolled to if needed. the content is already all there and perfectly fine.
+
