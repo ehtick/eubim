@@ -85,7 +85,7 @@ Demo:
 
 ## 6. Today EUBIM demo
 
-I asked GitHub Copilot to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
+I asked GitHub Copilot using Haiku 4.5 (old, cheap) to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
 
 - [My prompt and session notes](/doc/2026-05-19_copilot.txt)
 - [Chronological outline](/doc/2026-05-19_autonomous_revit_addins_chronology.md)
