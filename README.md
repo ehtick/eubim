@@ -125,7 +125,7 @@ Up to you:
 - What are your thoughts?
 - What are your plans?
 
-<p style="font-size: larger">¡Pruebalo!!</p>
+<p style="font-size: larger">¡Pruebalo!</p>
 
 ## License
 
