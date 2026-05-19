@@ -127,9 +127,13 @@ Up to you:
 
 <p style="font-size: larger">¡Pruebalo!</p>
 
-## License
-
 ## Author
 
-https://jeremytammik.github.io/tbc/a/
+[Jeremy Tammik](https://www.linkedin.com/in/jeremytammik/),
+[The Building Coder](https://jeremytammik.github.io/tbc/a/),
+[@jeremytammik](https://github.com/jeremytammik)
 
+## License
+
+This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Please see the [LICENSE](LICENSE) file for full details.
