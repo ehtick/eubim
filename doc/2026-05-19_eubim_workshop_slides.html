@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿El fin del programador de Revit? - EUBIM 2026 Valencia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .presentation {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            min-height: 700px;
+            padding: 60px 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide h1 {
+            font-size: 3.5em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .slide h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #764ba2;
+            padding-bottom: 20px;
+        }
+        
+        .slide h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .slide p, .slide li {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .slide ul {
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .slide li {
+            margin-bottom: 12px;
+        }
+        
+        .subtitle {
+            font-size: 1.8em;
+            color: #764ba2;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .timeline-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+        
+        .demo-box {
+            background: rgba(0, 0, 0, 0.05);
+            border: 3px solid #667eea;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .demo-box code {
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .key-point {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #f5f7fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        button {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #fff176;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 20px 0;
+        }
+        
+        .two-column h3 {
+            grid-column: 1 / -1;
+        }
+        
+        .column {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+            margin-right: 10px;
+        }
+        
+        .speaker-notes {
+            display: none;
+            background: #f0f0f0;
+            border-top: 1px solid #ddd;
+            padding: 20px;
+            font-size: 1em;
+            color: #666;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .show-notes .speaker-notes {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>¿El fin del programador de Revit?</h1>
+            <p class="subtitle">Crónica de experimentos en codificación autónoma</p>
+            <h3 style="color: #667eea; font-weight: 400;">From Manual AI-Driven Development to Fully Autonomous Systems</h3>
+            <p style="margin-top: 80px; font-size: 1.2em; color: #888;">Jeremy Tammik | EUBIM 2026 Valencia</p>
+            <p style="font-size: 1.2em; color: #888;">May 20, 2026 | 90 Minutes</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Welcome to a hands-on chronicle of AI-driven BIM programming. We'll trace the evolution from manual code generation loops (February 2026) to fully autonomous systems that require zero human intervention (May 2026). By the end, you'll understand how AI agents, digital signing, Revit events, and logging combine to create self-contained development systems.
+            </div>
+        </div>
+
+        <!-- Slide 2: Agenda -->
+        <div class="slide">
+            <h2>Workshop Agenda</h2>
+            <div style="margin-top: 40px;">
+                <p><span class="emoji">1️⃣</span><strong>Part 1: History & Context (15 min)</strong><br>From Autodesk to The Building Coder to retirement</p>
+                <p><span class="emoji">2️⃣</span><strong>Part 2: The Catalyst (15 min)</strong><br>HVAC MEP system generation with Claude Opus 4.6</p>
+                <p><span class="emoji">3️⃣</span><strong>Part 3: The Vision (10 min)</strong><br>Autonomous workflows: zero human intervention</p>
+                <p><span class="emoji">4️⃣</span><strong>Part 4: Live Architecture Tour (25 min)</strong><br>Demo02 & CmdLittleHouse: patterns, signing, events, logging</p>
+                <p><span class="emoji">5️⃣</span><strong>Part 5: Lessons & Future (15 min)</strong><br>What AI excels at, where humans still matter</p>
+            </div>
+            <p style="margin-top: 60px; color: #888; font-style: italic;">Interactive: Questions welcome throughout. Live demo available if time permits.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Keep time. Part 4 is the core technical content. If running behind, condense Part 1 and 2 slightly. Have the Demo02 system ready to showcase in Part 4.
+            </div>
+        </div>
+
+        <!-- Slide 3: Part 1 - History -->
+        <div class="slide">
+            <h2>Part 1: History & Context (15 min)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>2005–2008</strong><br>
+                    <p>Joined Autodesk. Started The Building Coder blog. Technology evangelist role.</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>2010</strong><br>
+                    <p>Revit API discussion forum launched. Years of answering repetitive questions.</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>2017–2024</strong><br>
+                    <p>Q4R4: Question Answering for Revit API. Explored ML, RAG, ChatGPT, Claude.</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>June 2025</strong><br>
+                    <p>Retired after 20 years. Last event: DevCon Amsterdam 2025.</p>
+                </div>
+            </div>
+            <p style="margin-top: 60px; color: #667eea; font-weight: 600;">Key insight: Decades of repetitive questions + AI + automation = opportunity.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Briefly reflect on the journey. Emphasize how repetitive programming tasks (answering the same questions for 15 years) made AI automation a natural next step. Transition: "In retirement, I had time to experiment. Fortuitously, AI had just reached the point where it could reliably generate Revit code."
+            </div>
+        </div>
+
+        <!-- Slide 4: Part 2 - The Catalyst -->
+        <div class="slide">
+            <h2>Part 2: The Catalyst – February 2026</h2>
+            <h3>HVAC MEP System Generation with Claude Opus 4.6</h3>
+            <div class="key-point">
+                <span class="emoji">💡</span> After month-long procrastination, fortuitous timing: Claude Opus 4.6 released.
+            </div>
+            <h3>What I Did (Manual Loop):</h3>
+            <ul>
+                <li><strong>1.</strong> Describe MEP HVAC system in natural language</li>
+                <li><strong>2.</strong> Claude generates C# Revit API code</li>
+                <li><strong>3.</strong> I compile, manually launch Revit, load add-in</li>
+                <li><strong>4.</strong> I click buttons, visually inspect results</li>
+                <li><strong>5.</strong> I tell Claude "that didn't work" or "tweak X"</li>
+                <li><strong>6.</strong> Claude regenerates; loop back to step 3</li>
+            </ul>
+            <p style="margin-top: 40px; color: #667eea;"><strong>Result:</strong> Fully working HVAC system import/export in 3 days.</p>
+            <p style="color: #888;"><em>But every iteration required me to click buttons and describe what I saw.</em></p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Emphasize the friction: I had to visually inspect the model each time. That's where the idea came from: "What if the AI could verify itself without me?"
+            </div>
+        </div>
+
+        <!-- Slide 5: Part 2 Continued - The Question -->
+        <div class="slide">
+            <h2>The Question</h2>
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; font-size: 2.2em; color: #764ba2;">Can the AI close the loop?</h3>
+                <p style="text-align: center; margin-top: 60px; font-size: 1.4em; color: #333;">
+                    Prompt → Code Gen → Compile → Sign → Install → Launch Revit → Run → Log → Verify
+                </p>
+                <p style="text-align: center; margin-top: 80px; font-size: 1.3em; color: #888;">
+                    <strong>All without human intervention.</strong>
+                </p>
+            </div>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> This is the pivot point. Everything before was "AI helps humans." From here on, it's "AI does the whole loop."
+            </div>
+        </div>
+
+        <!-- Slide 6: Part 3 - The Vision -->
+        <div class="slide">
+            <h2>Part 3: The Vision</h2>
+            <div class="key-point">
+                <span class="emoji">🎯</span> A Revit add-in that launches itself, executes commands, and verifies results—<strong>without a human pressing a single button</strong>.
+            </div>
+            <h3>Building Blocks:</h3>
+            <div class="two-column">
+                <div class="column">
+                    <p><strong>🤖 AI Code Generation</strong><br>OpenAI Codex CLI</p>
+                </div>
+                <div class="column">
+                    <p><strong>🔐 Digital Signing</strong><br>Local certificates, no prompts</p>
+                </div>
+                <div class="column">
+                    <p><strong>⚡ Revit Events</strong><br>ApplicationInitialized, Idling</p>
+                </div>
+                <div class="column">
+                    <p><strong>📝 Logging</strong><br>Timestamped verification files</p>
+                </div>
+            </div>
+            <h3 style="margin-top: 60px;">Why Now?</h3>
+            <ul>
+                <li>AI models are reliable enough for production code</li>
+                <li>Revit events enable autonomous execution</li>
+                <li>Code signing is straightforward with local certificates</li>
+                <li>Logging is the "eyes" of an autonomous system</li>
+            </ul>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> These four building blocks are the secret. None is new individually, but together they enable something unprecedented for Revit development.
+            </div>
+        </div>
+
+        <!-- Slide 7: Part 4 - Architecture -->
+        <div class="slide">
+            <h2>Part 4: Architecture Tour – Demo02 & CmdLittleHouse</h2>
+            <h3>System Components:</h3>
+            <div class="demo-box">
+                <code>
+                    Codex/Demo02/<br>
+                    ├── Application.cs (OnStartup, events)<br>
+                    ├── Commands/<br>
+                    │   ├── CmdDemo02.cs (Execute, Execute2)<br>
+                    │   └── CmdLittleHouse.cs (Execute, Execute2)<br>
+                    ├── signing/ (local certificates)<br>
+                    ├── log/ (timestamped output)<br>
+                    └── Demo02.csproj (build + sign)
+                </code>
+            </div>
+            <p style="margin-top: 40px; color: #667eea;"><strong>Pattern:</strong> Every external command follows the same architecture. Consistency = predictability = reliability.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Show the folder structure on screen. Explain that AGENTS.md documents these patterns so future commands follow the same rules.
+            </div>
+        </div>
+
+        <!-- Slide 8: External Command Pattern -->
+        <div class="slide">
+            <h2>Pattern 1: External Command Separation</h2>
+            <div class="demo-box">
+                <code>
+                    public class CmdDemo02 : IExternalCommand<br>
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;public Result Execute(ExternalCommandData data) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Entry point (resolve document)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Execute2(doc);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;private Result Execute2(Document doc) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Real work (testable, reusable)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </code>
+            </div>
+            <h3 style="margin-top: 40px;">Why?</h3>
+            <ul>
+                <li><strong>Execute:</strong> Revit entry point (cannot be tested directly)</li>
+                <li><strong>Execute2:</strong> Pure document work (callable from anywhere)</li>
+                <li>Separation enables <span class="highlight">automated testing</span> and <span class="highlight">event-driven startup</span></li>
+            </ul>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> This pattern is the foundation. It's what allows the same command logic to run both on button click and on startup via events.
+            </div>
+        </div>
+
+        <!-- Slide 9: Startup Automation Pattern -->
+        <div class="slide">
+            <h2>Pattern 2: Startup Automation</h2>
+            <div class="demo-box">
+                <code>
+                    void OnStartup(object s, StartupEventArgs args) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;app.ApplicationInitialized += OnApplicationInitialized;<br>
+                    }<br>
+                    <br>
+                    void OnApplicationInitialized(object s, EventArgs args) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;app.Idling += OnIdling;<br>
+                    }<br>
+                    <br>
+                    void OnIdling(object s, IdlingEventArgs args) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (uiApp.ActiveUIDocument?.Document != null) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.Idling -= OnIdling; // unsubscribe<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CmdDemo02.Execute2(doc);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </code>
+            </div>
+            <p style="margin-top: 40px; color: #667eea;"><strong>Key:</strong> Stay subscribed to Idling until document exists. Only then execute.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Show the sequence: OnStartup → ApplicationInitialized → Idling. Explain the timing: Revit may not have a document yet when Idling first fires. We wait for one.
+            </div>
+        </div>
+
+        <!-- Slide 10: Digital Signing Pattern -->
+        <div class="slide">
+            <h2>Pattern 3: Digital Code Signing</h2>
+            <div class="key-point">
+                <span class="emoji">🔑</span> <strong>Problem:</strong> Unsigned assemblies trigger "Load Always / Load Once / Do Not Load" dialog.
+            </div>
+            <p style="margin-top: 40px;"><strong>Solution:</strong> Sign at build time.</p>
+            <div class="demo-box">
+                <code>
+                    &lt;!-- Demo02.csproj --&gt;<br>
+                    &lt;SignAssembly&gt;true&lt;/SignAssembly&gt;<br>
+                    &lt;AssemblyOriginatorKeyFile&gt;<br>
+                    &nbsp;&nbsp;signing/demo02.pfx<br>
+                    &lt;/AssemblyOriginatorKeyFile&gt;
+                </code>
+            </div>
+            <h3 style="margin-top: 40px;">Workflow:</h3>
+            <ul>
+                <li><strong>Once:</strong> Generate local certificate, import to trust store</li>
+                <li><strong>Every build:</strong> Compile → Sign → Install → No prompts</li>
+                <li><strong>Result:</strong> Revit loads add-in silently, executes commands</li>
+            </ul>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Emphasize that this is a one-time setup cost. After that, builds are 100% automated.
+            </div>
+        </div>
+
+        <!-- Slide 11: Logging Pattern -->
+        <div class="slide">
+            <h2>Pattern 4: Comprehensive Logging</h2>
+            <p><strong>Principle:</strong> <span class="highlight">An autonomous system has no eyes. Logs are its vision.</span></p>
+            <h3 style="margin-top: 40px;">What We Log:</h3>
+            <ul>
+                <li><strong>OnStartup:</strong> When add-in loads</li>
+                <li><strong>OnApplicationInitialized:</strong> When Revit is ready</li>
+                <li><strong>OnIdling:</strong> When Idling event fires (and whether document exists)</li>
+                <li><strong>Execute, Execute2:</strong> When commands run, what they do, results</li>
+            </ul>
+            <h3>Format:</h3>
+            <div class="demo-box">
+                <code>
+                    C:/Users/j/w/src/eubim/Codex/Demo02/log/<br>
+                    ├── 20260515-171210-101-OnStartup.log<br>
+                    ├── 20260515-171210-101-ApplicationInitialized.log<br>
+                    ├── 20260515-171210-101-OnIdling.log<br>
+                    └── 20260515-171210-101-Execute2.log
+                </code>
+            </div>
+            <p style="margin-top: 40px; color: #888;">Each file is <strong>timestamped, sequential, human-readable</strong>.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Show a real log file on screen if possible. Explain how we verify the system worked by reading these files.
+            </div>
+        </div>
+
+        <!-- Slide 12: The Full Loop -->
+        <div class="slide">
+            <h2>The Complete Autonomous Loop</h2>
+            <div style="margin: 60px 0;">
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">1. Codex generates code</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">2. Build system compiles</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">3. Build system signs DLL</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">4. Build system installs to Revit</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">5. Revit launches (command-line RVT)</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">6. Add-in auto-executes via Idling</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">7. Logs written, process exits</span>
+                </p>
+                <p style="font-size: 1.2em; text-align: center; color: #888;">↓</p>
+                <p style="font-size: 1.4em; text-align: center; margin: 20px 0;">
+                    <span style="background: #667eea; color: white; padding: 10px 20px; border-radius: 4px;">8. Codex reads logs, iterates or completes</span>
+                </p>
+            </div>
+            <p style="text-align: center; margin-top: 40px; color: #667eea; font-weight: 600;">⏱️ End-to-end execution: ~25–30 seconds</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Walk through this step by step. Emphasize that once set up, it runs 100% automatically. Show a video or live demo if available.
+            </div>
+        </div>
+
+        <!-- Slide 13: CmdLittleHouse -->
+        <div class="slide">
+            <h2>Case Study: CmdLittleHouse</h2>
+            <p><strong>Goal:</strong> Build a complete BIM model autonomously, with multiple iterative refinements.</p>
+            <div class="key-point">
+                <span class="emoji">🏠</span> Create a house with 2 levels, 4 walls, 1 floor, 1 roof, doors, windows—<strong>all via AI-generated code, running unattended.</strong>
+            </div>
+            <h3 style="margin-top: 40px;">Development Timeline:</h3>
+            <ul>
+                <li><strong>Iteration 1:</strong> Basic geometry (family lookup failures)</li>
+                <li><strong>Iteration 2:</strong> Fix geometry (floor, walls, windows, doors)</li>
+                <li><strong>Iteration 3:</strong> Refine roof (overhang, attachment)</li>
+            </ul>
+            <p style="margin-top: 40px; color: #888;"><strong>Codex drove each iteration:</strong> "The windows are too low. The roof overhang is too large." Codex fixed code, system reran, logs verified.</p>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Emphasize that this is not a trivial "Hello World" command. It's a real geometric modeling task with multiple iterations driven by feedback from log analysis.
+            </div>
+        </div>
+
+        <!-- Slide 14: Key Insights -->
+        <div class="slide">
+            <h2>Key Insights</h2>
+            <div style="margin: 40px 0;">
+                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                    <span class="emoji">1️⃣</span> <strong>AI + Structure = Reliability.</strong> Free-form prompts fail. Patterns (AGENTS.md) ensure consistent code.
+                </p>
+                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                    <span class="emoji">2️⃣</span> <strong>Signing solves the Revit dialog problem.</strong> One-time setup, massive payoff.
+                </p>
+                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                    <span class="emoji">3️⃣</span> <strong>Events (ApplicationInitialized, Idling) are the key to autonomy.</strong> Not button clicks.
+                </p>
+                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                    <span class="emoji">4️⃣</span> <strong>Logging enables autonomous iteration.</strong> Logs are the "eyes" the AI uses to verify and refine.
+                </p>
+                <p style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 5px solid #667eea;">
+                    <span class="emoji">5️⃣</span> <strong>Documentation (AGENTS.md) is foundational.</strong> Future commands inherit patterns; developers and AI follow conventions.
+                </p>
+            </div>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> These are the five pillars. If you remember nothing else, remember these.
+            </div>
+        </div>
+
+        <!-- Slide 15: Part 5 - Lessons & Future -->
+        <div class="slide">
+            <h2>Part 5: Lessons & Future (15 min)</h2>
+            <h3 style="color: #667eea;">What AI Excels At:</h3>
+            <ul>
+                <li>Boilerplate code (manifests, event handlers)</li>
+                <li>Iteration (refactor, fix, test, refactor)</li>
+                <li>Following patterns (if patterns are clear)</li>
+                <li>Testing and verification (writing log parsers, checking results)</li>
+            </ul>
+            <h3 style="color: #667eea; margin-top: 40px;">Where Humans Are Still Essential:</h3>
+            <ul>
+                <li>Defining the problem clearly</li>
+                <li>Creating architectural patterns (AGENTS.md)</li>
+                <li>Interpreting edge cases and failures</li>
+                <li>Making design tradeoffs</li>
+                <li>Understanding business context</li>
+            </ul>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> This is the balanced view. AI is a powerful tool, not a replacement. The future is humans + AI, not AI alone.
+            </div>
+        </div>
+
+        <!-- Slide 16: Questions & Discussion -->
+        <div class="slide">
+            <h2>Closing Thoughts</h2>
+            <p style="font-size: 1.5em; margin: 60px 0;">
+                The question is no longer: <strong>"Can AI write Revit add-ins?"</strong>
+            </p>
+            <p style="font-size: 1.3em; color: #888; margin-bottom: 40px;">
+                <em>(We proved it can. In a weekend.)</em>
+            </p>
+            <p style="font-size: 1.5em; color: #667eea; font-weight: 600;">
+                The real question is: <strong>"What should humans do when AI writes Revit add-ins?"</strong>
+            </p>
+            <div style="margin-top: 80px; text-align: center;">
+                <p style="font-size: 1.3em; color: #333;">❓ Questions? ❓</p>
+                <p style="color: #888; margin-top: 30px;">Demo available. Logs available. AGENTS.md pattern library available on GitHub.</p>
+            </div>
+            <div class="speaker-notes">
+                <strong>Speaker Notes:</strong> Transition to Q&A. Be ready to discuss governance, reliability, cost-benefit, real-world adoption barriers. Have the GitHub repo link ready.
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">16</span></span>
+            <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+            }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
