@@ -116,6 +116,14 @@ We have implemented the [Sentinel QC](https://www.revitqc.com/) application.
 It automates QA/QC controls and implements governed write access to Revit with preview, atomic rollback, and audit receipts on every change. 
 No AI touches the model. 
 Deterministic tools do the work.
+
+- [Sentinel summary](doc/2026-05-19_sentinel.md)
+
+Core challenges addressed:
+
+1. *Must* satisfy to 100% the top AEC modelling priority: reliablility, governance, liability, trust
+2. Addresses core problem: many AEC standards are written for humans...
+
 Very exciting project, lots of fun, learning a lot, happy to be doing this.
 
 ## 6. Autonomous Agentic Loop for Revit API
