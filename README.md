@@ -28,7 +28,8 @@ Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de p
 3. Retirement
 4. HVAC MEP system generation with Claude Opus 4.6
 5. Terrascape
-6. Today, tomorrow, agents et al
+6. Today EUBIM demo
+7. Tomorrow up to you and your agents
 
 ## 1. Autodesk and The Building Coder
 
@@ -79,7 +80,18 @@ Demo:
 
 ## 5. Terrascape
 
-## 6. Today, tomorrow, agents et al
+## 6. Today EUBIM demo
+
+I asked GitHub Copilot to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
+
+- [My prompt and session notes](/doc/2026-05-19_copilot.txt)
+- [Chronological outline](/doc/2026-05-19_autonomous_revit_addins_chronology.md)
+- [Slide deck](/doc/2026-05-19_eubim_workshop_slides.html)
+
+
+## 7. Tomorrow up to you and your agents
+
+, tomorrow, agents et al
 
 GitHub Copilot
 Codex
@@ -97,3 +109,4 @@ Harness
 ## Author
 
 https://jeremytammik.github.io/tbc/a/
+
