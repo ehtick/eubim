@@ -124,7 +124,17 @@ Core challenges addressed:
 1. *Must* satisfy to 100% the top AEC modelling priority: reliablility, governance, liability, trust
 2. Addresses core problem: many AEC standards are written for humans...
 
-Very exciting project, lots of fun, learning a lot, happy to be doing this.
+Example:
+
+- Meeting Adam at [DevCon](https://aps.autodesk.com/blog/autodesk-devcon-2026-highlights)
+- Email introduction to Christian, contacting via LinkedIn
+- Analysis of publicly available QLH AEC BIM requirements
+- Demo implementation sprint
+- Demo meeting successful
+- Email with detailed requirements Friday
+- Draft solution implemented and ready for next demo by Sunday
+
+Exciting projects, lots of fun, learning a lot, happy to be doing this.
 
 ## 6. Autonomous Agentic Loop for Revit API
 
