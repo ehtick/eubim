@@ -115,10 +115,17 @@ Larger more powerful autonomous agent frameworks:
 - Hermes
 - OpenClaw
 
-Current research emphasises:
+Current research emphasisis:
 
 - Harness
 
+Up to you:
+
+- What are you doing?
+- What are your thoughts?
+- What are your plans?
+
+<p style="font-size: larger">¡Pruebalo!!</p>
 
 ## License
 
