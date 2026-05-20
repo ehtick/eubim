@@ -127,14 +127,14 @@ Core challenges addressed:
 Example:
 
 - Meeting Adam at [DevCon](https://aps.autodesk.com/blog/autodesk-devcon-2026-highlights)
-- Email introduction to Christian, contacting via LinkedIn
+- Email introduction to Christian, leading to LinkedIn contact
 - Analysis of publicly available QLH AEC BIM requirements
 - Demo implementation sprint
 - Demo meeting successful
 - Email with detailed requirements Friday
 - Draft solution implemented and ready for next demo by Sunday
 
-Exciting projects, lots of fun, learning a lot, happy to be doing this.
+Exciting project, lots of fun, learning a lot, happy to be doing this.
 
 ## 6. Autonomous Agentic Loop for Revit API
 
@@ -150,9 +150,7 @@ See the slide deck below...
 
 ## 7. Today
 
-To prepare the documentation and slides for this EUBIM demo:
-
-I asked GitHub Copilot using Haiku 4.5 (old, cheap) to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
+I prepared the documentation and slides for this EUBIM demo using GitHub Copilot and Haiku 4.5 (not the newest!) to read this repo to generate a chronological outline and a slide deck for my EUBIM workshop.
 
 - [My prompt and LLM session notes](/doc/2026-05-19_copilot.txt)
 - [Chronological outline](/doc/2026-05-19_autonomous_revit_addins_chronology.md)
@@ -204,6 +202,11 @@ Up to you:
 
 P.S. I recommend reading [AINews by smol.ai](https://news.smol.ai/).
 I do so daily.
+
+P.P.S. [Google I/O 2026 keynote in 35 minutes](https://youtu.be/OMhKgQmeMhI)
+shows where industry is headed today: harnesses, agents, 
+24/7 background activity with voice control, 
+all different kinds of input channels and remote control.
 
 ## Author
 
