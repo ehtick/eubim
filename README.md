@@ -208,6 +208,13 @@ shows where industry is headed today: harnesses, agents,
 24/7 background activity with voice control, 
 all different kinds of input channels and remote control.
 
+P.P.P.S. two little notes from today's AI news underline the SOTA:
+
+- Can coding agents do research? Not yet: Intology AI released NanoGPT-Bench, an autonomous benchmark based on the NanoGPT Speedrun competition, testing whether coding agents can contribute to real AI R&D progress. Their headline result: Codex, Claude Code, and Autoresearch recover only 9.3% of human progress, mostly via hyperparameter tuning rather than algorithmic innovation.
+- Agent harnesses and memory are getting more formalized: @omarsar0 highlighted a 100+ page survey on code-as-agent-harness, arguing future systems need to be executable, inspectable, stateful, and governed. François Chollet made the related point that real tasks are rarely Markovian, so agents without high-fidelity trajectory compression are dramatically less useful.
+
+... I guess the Terrascape pipeline could be termed a high-fidelity trajectory :-)
+
 ## Author
 
 [Jeremy Tammik](https://www.linkedin.com/in/jeremytammik/),
