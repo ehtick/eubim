@@ -10,6 +10,11 @@ at Universitat Politècnica de València, organised by Eubim, Encuentro de Usuar
 
 Sinopsis: En esta sesión de 90 minutos, Jeremy Tammik narra su transición de programador a orquestador de IA. La crónica comienza en febrero de 2026, tras desarrollar un add-in complejo de MEP sin escribir una sola línea de código personalmente. El núcleo de la charla explora experimentos con frameworks de codificación autónoma y unit testing que utilizan agentes de IA para generar, testear y corregir código en tiempo real. Analizaremos cómo la instrumentación adaptativa permite a la IA observar el entorno transaccional de Revit, convirtiendo un ecosistema cerrado en una plataforma de desarrollo autodidacta y determinista.
 
+- [Li](https://www.linkedin.com/pulse/bim-programming-trends-from-human-coding-agent-jeremy-tammik-o7gaf)
+- [X](https://x.com/jeremytammik/status/2057137855227375787)
+
+![EUBIM-Code() 2026](img/eubim_code_2026.png)
+
 ## Rough Agenda Draft
 
 - interest in 2017 --> Q4R4

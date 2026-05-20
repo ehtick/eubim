@@ -4,8 +4,9 @@
 
 summarise the content of my presentation from the readme, chronological timeline, slide deck and spanish script to create a linkedin article. what is the best format for that? can i use markdown?
 
-### Response
+## Response
 
+(GitHub Copilot with Claude Haiku 4,5) 
 I'll help you create a LinkedIn article summarizing your EUBIM presentation. Let me first gather the content from your repository.Now let me get the chronological timeline, slide deck, and Spanish script:Based on your presentation materials, here's my guidance on creating a LinkedIn article:
 
 ### Best Format for LinkedIn
@@ -138,4 +139,29 @@ Done. The article is now in your repo at `doc/2026-05-20_linkedin_article.md`.
 - **Hashtags included** – For LinkedIn discovery
 
 You can copy the body text (everything after the title line) directly into LinkedIn's article editor. The markdown formatting will mostly translate, and you can adjust bold/italics as needed.
+
+## Jeremy's Rewrite
+
+### BIM Programming Trends -- from Human Coding to Agent Orchestration
+
+I just published my first new GitHub repo for a while:
+
+#### AI and BIM Programming at EUBIM 2026 Valencia -- Experiments in BIM Programming with AI.
+
+#### ¿El fin del programador de Revit? Crónica de experimentos en codificación autónoma
+
+https://github.com/jeremytammik/eubim
+
+I was surprised in February 2026, discovering that Claude Opus 4.6 completed a Revit API programming task for me in 3-4 days that might have taken me significantly longer, without me having to look at the code. I just checked results, detected problems, and suggested alternative Revit API approaches that the LLM did not discover by itself, as well as suggesting logging and code instrumentation strategies to enable the AI to keep track of its own successes and resolve its own errors.
+
+In that experience, I was still manually driving the process.
+
+For my Valencia workshop, I tested using Codex, which includes the ability to launch Revit.exe itself. With that option in hand, it is easy to set up a fully autonomous Revit API coding and unit testing loop. It includes all the steps to code, compile, install, launch both Revit and the add-in external command, test the code, log results and verify the intended functionality.
+
+- AI code generation (Claude, Codex)
+- Digital signing (local certificates, zero trust dialogs)
+- Revit events (ApplicationInitialized + Idling)
+- Code instrumentation for comprehensive logging (the "eyes" of autonomy)
+
+Look at the GitHub repo above. Try it yourself. Looking forward to hearing your thoughts and experiences.
 
