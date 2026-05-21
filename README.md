@@ -185,8 +185,8 @@ What I have tested and used:
 
 Colleagues recommended looking at:
 
-- Cline
-- Cursor
+- [Cline](https://docs.cline.bot/cline-overview)
+- Cursor (Marcello recommends it)
 
 Larger more powerful autonomous agent frameworks:
 

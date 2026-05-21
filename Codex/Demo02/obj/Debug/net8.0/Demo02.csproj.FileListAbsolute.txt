@@ -1,0 +1,13 @@
+C:\Users\j\w\src\eubim\Codex\Demo02\bin\Debug\net8.0\Demo02.deps.json
+C:\Users\j\w\src\eubim\Codex\Demo02\bin\Debug\net8.0\Demo02.dll
+C:\Users\j\w\src\eubim\Codex\Demo02\bin\Debug\net8.0\Demo02.pdb
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.csproj.AssemblyReference.cache
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.AssemblyInfoInputs.cache
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.AssemblyInfo.cs
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.csproj.CoreCompileInputs.cache
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.sourcelink.json
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.dll
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\refint\Demo02.dll
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\Demo02.pdb
+C:\Users\j\w\src\eubim\Codex\Demo02\obj\Debug\net8.0\ref\Demo02.dll

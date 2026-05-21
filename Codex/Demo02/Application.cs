@@ -73,8 +73,8 @@ public class Application : IExternalApplication
         }
 
         _uiControlledApplication.Idling -= OnIdling;
-        ExecutionLog.Write("OnIdling", $"Invoking CmdLittleHouse.Execute2 for '{document.Title}'.");
-        Commands.CmdLittleHouse.Execute2(document);
+        ExecutionLog.Write("OnIdling", $"Invoking CmdLittleHouse3Storey.Execute2 for '{document.Title}'.");
+        Commands.CmdLittleHouse3Storey.Execute2(document);
     }
 
     private void RegisterCommand(UIControlledApplication application)
@@ -98,6 +98,15 @@ public class Application : IExternalApplication
 
         panel.AddItem(littleHouseButton);
         ExecutionLog.Write("RegisterCommand", "Registered CmdLittleHouse ribbon button.");
+
+        var littleHouse3StoreyButton = new PushButtonData(
+            "CmdLittleHouse3Storey",
+            "CmdLittleHouse3Storey",
+            assemblyPath,
+            "Demo02.Commands.CmdLittleHouse3Storey");
+
+        panel.AddItem(littleHouse3StoreyButton);
+        ExecutionLog.Write("RegisterCommand", "Registered CmdLittleHouse3Storey ribbon button.");
     }
 }
 

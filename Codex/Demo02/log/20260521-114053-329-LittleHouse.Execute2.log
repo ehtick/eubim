@@ -1,0 +1,9 @@
+Timestamp: 2026-05-21T11:40:53.3292591+02:00
+Phase: LittleHouse.Execute2
+Details: Autodesk.Revit.Proxy.Exceptions.InvalidObjectExceptionProxy: The referenced object is not valid, possibly because it has been deleted from the database, or its creation was undone.
+   at Autodesk.Revit.Proxy.DB.ElementProxy.getValidObject()
+   at Autodesk.Revit.DB.Element.getElement()
+   at Autodesk.Revit.DB.FamilyInstance.getFamilyInstance()
+   at Autodesk.Revit.DB.FamilyInstance.get_Symbol()
+   at Demo02.Commands.CmdLittleHouse.LittleHouseReport.WriteMarkdown()
+   at Demo02.Commands.CmdLittleHouse.Execute2(Document document)
