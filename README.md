@@ -220,6 +220,8 @@ P.P.P.S. two little notes from today's AI news underline the SOTA:
 
 ... I guess the Terrascape pipeline could be termed a high-fidelity trajectory :-)
 
+PPPPS. [No solo crecer en inteligencia sino pensar en como manejar la experiencia](https://x.com/javazr/status/2057378679026532778) &ndash; gracias Pepe Vázquez
+
 ## Author
 
 [Jeremy Tammik](https://www.linkedin.com/in/jeremytammik/),
